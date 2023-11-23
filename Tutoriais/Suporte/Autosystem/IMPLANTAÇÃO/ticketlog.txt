@@ -1,0 +1,17 @@
+TicketLog
+
+Requisitos:
+	> Codº estabelecimento
+	> us & pass
+
+Rotina:
+	Configurações > Módulos > Configuração de Frotas > Recolha de Notas
+
+
+[UsuarioWeb]1397830|integracaoapirederavanello
+81rAVa64n2e308llo
+
+149 ex
+
+SELECT c.grid,c.empresa,c.ativo,c.usuario,c.senha,c.codigo_estabelecimento,c.envia_xml_pdv,c.utiliza_dados_api,c.reconsulta_dados_nfe FROM exc_ticketlog_config c WHERE c.empresa = 9922::int8  limit 1;
+

@@ -1,0 +1,47 @@
+O que é o flask?
+    R: Framework de micro serviço que serve para aplicações WEB
+
+O que é o requiresments.txt?
+    R: Ele é um arquivo de texto onde ficam os pacos escritos ao qual tu deseja instalar.
+        Dentro dele vamos ter o nome do pacotes, como exemplo:
+        flask
+        pandas
+
+        para instalar esses pacotes basta usar o seguinte comando:
+            pip install -r /path/to/requirements.txt
+
+O que é um ambiente virtual?
+    R: Um ambiente onde pode ter mais pacotes sem criar um conflito com outras versões, ou seja,
+        tu pode usar até outro python dentro em um ambiente, como se fosse um pedacinho separado
+        do seu HDD. Um dos mais famosos é o "venv"
+            -> python > 3.6 = python -m venv venv
+        Com isso, após criar seu ambiente virtual, tu precisa ativar ele, pra usá-lô
+            -> nome_da_virtualenv/Scripts/Activate (Windows)
+            -> source nome_da_virtualenv/bin/activate (Linux ou macOS)
+
+Como funciona uma rota no flask?
+    Elementos obrigatórios:
+        rule="/user/<username>/,
+        view=python_function_name,
+        methods=['GET', 'POST', 'PUT']
+        endpoint=nome_unico_no_flask
+        defaults={key=}
+
+Como converter direto na URL em Flask:
+    url/path/<conversor:param>
+
+    ou, seja: conversor = tipo, param = parâmetro
+
+    Quais conversores existe?
+        -> int (numeros);
+        -> float (recebe um ex.: 2.1);
+        -> string (somente string);
+        -> any (qualquer tipo de coisa);
+        -> path (caminhos de arquivos, ou seja, pega todos os argumento e transforma em um só);
+        -> uuid: (padrão de id do banco de dados)
+
+Log em Flask
+    app.logger.tipo_da_mensagem
+        > app.logger.info("INFO")
+        > app.logger.error("ERRO")
+        > app.logger.warn("AVISO")

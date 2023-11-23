@@ -1,0 +1,8 @@
+pg_hba
+192.168.1.30/32	--- permitido
+192.168.1.0/16 	--- permitido
+192.168.0.0/8 	--- nao permitido
+192.0.0.0/4   	--- só permitido para hamachi (inicial com 25.) Validar com supervisão
+0.0.0.0/0	--- (nunca usar)
+
+Não esqueça de liberar no firewall

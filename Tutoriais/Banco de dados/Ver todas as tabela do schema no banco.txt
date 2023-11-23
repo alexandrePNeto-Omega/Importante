@@ -1,0 +1,7 @@
+Ver todos os schemas:
+SELECT schema_name
+FROM information_schema.schemata;
+
+
+Tabelas do schema:
+select table_name from information_schema.tables where table_schema = 'nome_schema';

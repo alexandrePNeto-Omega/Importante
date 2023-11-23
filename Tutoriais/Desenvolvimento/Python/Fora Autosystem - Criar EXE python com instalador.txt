@@ -1,0 +1,79 @@
+-----------INSTALADOR----------------
+https://jrsoftware.org/isdl.php
+BAIXAR O INOSEUP CLICANDO EM RAMDOM SITE
+INSTALAR ELE CLICANDO EM NEXT NEXT FINISH
+
+ 
+
+Ao executar marcar:
+Create a new script using the Script Wizard
+-Next
+
+ 
+
+Nao marcar Create a new empty script File
+-Next
+
+ 
+
+Preencher nome do Sistema, Nome da Empresa, Site ...
+-Next
+
+ 
+
+-Next
+
+ 
+
+Application main executable file:
+Selecionar o executavel gerado
+
+ 
+
+Também nessa tela pode adicionar pastas caso houver ou arquivos
+
+ 
+
+-Next
+
+ 
+
+-Next
+
+ 
+
+-Next
+
+ 
+
+Install mode:
+(aqui sera marcado se precisa de permissão de admnistrador para isntalar)
+
+ 
+
+-Next
+Aqui idioma da instalação
+
+ 
+
+Compiler Settings
+É onde será a pasta de saída do sistema
+também o nome do .exe do instalador
+Icone se quiser e também senha se for o caso
+
+ 
+
+-Next
+
+ 
+
+-Next
+
+ 
+
+Vai perguntar se já quer executar clica em sim
+pergunta se quer salvar, pode clicar em sim
+
+ 
+
+(ele clicou em nao, aí deu erro. Ele clicou no play, salvou e rodou de novo)

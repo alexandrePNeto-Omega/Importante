@@ -9,6 +9,9 @@ sudo chown nobody:nogroup /home/atualizacao_as/ftp
 sudo chmod a-w /home/atualizacao_as/ftp
 sudo chown atualizacao_as:atualizacao_as /home/atualizacao_as/ftp/files
 echo "atualizacao_as" | sudo tee -a /etc/vsftpd.userlist
+
+
+----------------------------------------------------------------------------- Daqui para baixo é só para o atualização automática
 /etc/init.d/vsftpd restart
 
 configuração

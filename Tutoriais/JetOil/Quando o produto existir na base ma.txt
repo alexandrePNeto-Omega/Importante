@@ -1,0 +1,10 @@
+Sempre olhe para ver se é algo da matriz que não desceu;
+
+
+
+Quando o produto existir na base mas mesmo assim não retorna no JetOil
+> pega o select dele pelo cód
+> quebra todo o select
+> e faz um por um para ver qual não retorna
+> e quando achar o que não retorno
+> da o update nome_da_coluna set grid=grid;

@@ -1,0 +1,36 @@
+Titulo:
+Observar Título da PR
+Deve iniciar com "POSTOSAS3-00000" ou "POSTOSIPP-00000", na sequência ":" e o título que irá pra Intranet LZT
+É um título, então as iniciais são maiúsculas, exceto artigos e preposições (o, a os, as, com, de, da, das, do, dos, para, etc...)
+Abreviações [NF-e NFC-e CF-e SAT DANFe ICMS PIS COFINS IPI CST ISS] = OK [Nfe nfc-e cfe Danfe Icms pis cofins Ipi cst iss] = Não OK
+Não pode conter as palavras [Erro, traceback, problema, falha, lentidão, correção, etc...]
+Não pode ser muito longo máximo de 100 caracteres, maior que isso vai dar traceback na Intranet LZT
+Título de branch de bugfix e hotfix tem que identificar a rotina/funcionalidade que foi ajustada, não descrever o ajuste ou a ação que foi necessária
+Titulo de branch de feature tem que identificar a rotina/funcionalidade que foi melhora/implementada, não descrever a implementação em si ou a ação que foi necessária.
+Observar Descrição da PR, pois a mesma é usada na divulgação ao cliente/usuário, assim sendo deve ser escrita de forma clara para que pessoas que não tenham tanto conhecimento do sistema possam saber o que foi feito.
+Observar os erros de ortografia, gramática e concordância verbal
+Descrição deve dar mais detalhes do ajuste ou da melhoria realizada
+Não pode conter as palavras [erro, traceback, problema, falha, lentidão, correção, etc...]
+Sugestões para iniciar a descrição:
+Realizado ajuste...
+Ajuste realizado...
+Melhoria realizada...
+Realizada melhoria...
+Realizada implementação...
+Implementação realizada...
+Pode-se usar a palavra efetuada/efetuado no lugar de realizada/realizado, ou outro sinônimo que dê o mesmo entendimento
+Documentação de testes
+JIRA:
+link da issue do Jira a que se refere a PR
+Rotina:
+Rotina que foi alterada/ajustada (especificar como acessar a rotina alterada).
+ex: Financeiro/Fiscal/Integrações Fiscais/EFD ICMS IPI/Exportar Arquivo
+Rotina impactada:
+Rotinas que sofrerão impacto com as alterações realizadas, direta ou indiretamente, fora a rotina principal.
+ex: Financeiro/Relatórios/Controles Fiscais/Registro de Apuração de ICMS/Registro de Apuração de ICMS.
+Problema:
+Situação que deu origem à alteração.
+Correção:
+Procedimentos adotados para atender à solicitação ou correção.
+Procedimentos:
+Procedimentos que devem ser realizados para tentar simular o erro ou como testar a solução de forma que fique claro ao testador quais rotinas e configurações devem ser feitas ou acessadas.

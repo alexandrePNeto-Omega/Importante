@@ -1,0 +1,61 @@
+Diretório onde deve se criar o .xml da tabela para a criação no bando de dados:
+	> Caminho onde deve-se criar: devel > dbstruct > tables
+
+	- Como fica o xml da tabela:
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table>
+   <property name="name">paf_daf_pendencia</property>
+   <property name="replica">False</property>
+   <fields>
+      <field>
+         <property name="name">id</property>
+         <property name="type">long</property>
+         <property name="format"></property>
+         <property name="length"></property>
+         <property name="digits"></property>
+         <property name="input_mask"></property>
+         <property name="label"></property>
+         <property name="descr"></property>
+         <property name="default">nextval('nome_da_seq')</property>
+         <property name="required">True</property>
+         <property name="check"></property>
+         <property name="check_msg"></property>
+      </field>
+      <field>
+         <property name="name">nome do campo</property>
+         <property name="type">tipo do campo</property>
+         <property name="format"></property>
+         <property name="length"></property>
+         <property name="digits"></property>
+         <property name="input_mask"></property>
+         <property name="label"></property>
+         <property name="descr"></property>
+         <property name="default">valor default para autoincremento</property>
+         <property name="required">True</property>
+         <property name="check"></property>
+         <property name="check_msg"></property>
+      </field>
+   </fields>
+   	<indexes>
+		<index>
+		   <property name="name">paf_daf_pendencia_pkey</property>
+		   <property name="primary">True</property>
+		   <property name="unique">True</property>
+		   <property name="clustered">False</property>
+		   <property name="fields">id</property>
+		</index>
+	</indexes>
+</table>
+
+Diretório onde deve se criar o .xml da tabela para a criação do seq no bando de dados, que serve de auto incremento:
+	> Caminho onde deve-se criar: devel > dbstruct > sequences
+
+	- Como fica o xml da sequence:
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sequence>
+   <property name="name">nome_da_seq</property>
+   <property name="start">1</property>
+   <property name="increment"></property>
+   <property name="minvalue"></property>
+   <property name="maxvalue"></property>
+</sequence>

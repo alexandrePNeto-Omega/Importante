@@ -1,0 +1,29 @@
+Importações
+Não utilizar from modulo import * para importar classes ou funções, sempre importar apenas o que será necessário.
+Organizar sempre os imports de acordo com a raiz, ou seja, deixando junto o que se refere a cadastro, junto o que é financeiro, etc.
+
+    Ordem:
+
+    Módulos do Python (Ex.: os, sys, etc).
+    Módulos de Terceiros (Ex.: ReportLab, SimpleTAL, PIL, xmlsec, etc).
+    LxLibs.
+    Classes da pasta core (se realmente necessário)
+    Classes apps (se realmente necessário)
+    Classes model.
+        Em caso de conflito com uma classe de controller, criar um alias para a classe model, atribuindo o sufixo Model. Ex: PessoaModel
+    Classes controller.
+    Util.
+
+
+import os
+ 
+from reportlab.pdfgend.canvas import Canvas
+ 
+from lx.lxtypes import TLong, TString
+ 
+from apps.pessoa.controller.pessoa import Pessoa
+from model.caixa_conf import CaixaConf
+ 
+from controller.caixa import Caixa
+ 
+from util.lxutil import compara_versao

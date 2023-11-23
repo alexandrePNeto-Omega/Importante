@@ -1,0 +1,3 @@
+setpy 27; python devel/exe_compile.py
+
+setpy 27; python devel/compile.py

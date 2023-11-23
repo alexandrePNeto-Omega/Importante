@@ -1,0 +1,16 @@
+Tela
+Todas as telas devem ser apresentadas através do método show().
+Utilizar o método initialize() apenas no show() da tela, exceto em telas que herdam a biblioteca LztCadastro, onde deve-se utilizar o método show_window().
+Apenas regras de controle de interação com o usuário devem constar nos códigos fontes referente a tela.
+
+class WinNotaFiscal(LztGtkApp):
+    def __init__(self, ws):
+        self.ws = ws
+        self.db = db
+ 
+    def show(self):
+        self.initialize("fiscal/glade/nota_fiscal.glade", "nota_main");
+        lztgtk_main()
+ 
+    def configure(self):
+        LookupModeloDoc(self.db, self.w.modelo_doc)

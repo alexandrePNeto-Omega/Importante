@@ -1,0 +1,24 @@
+python -m venv venv
+
+. .\venv\Scripts\activate
+
+instlando dentro do venv
+pip install pyinstaller  
+python .\main.py
+
+para gerar o exe
+pyinstaller .\main.spec
+
+
+
+
+pyinstaller.exe --onefile main.py
+
+pyinstaller.exe --onefile --windowed --icon=icone.ico main.py
+
+pyinstaller.exe --onefile deletFIlesTulio.py
+
+
+pyinstaller.exe --onefile --windowed main.py
+
+Tul!0Om3g@

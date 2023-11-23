@@ -19,3 +19,9 @@ exc_mercafacil_grupo_produto_flow
 exc_mercafacil_transacao_flow
 
 pessoa_agregado_banco_flow
+
+exchange_emsys_gestao_config_empresa_habilita_flow
+
+nota_fiscal_nsu_flow
+
+recado_placa_flow

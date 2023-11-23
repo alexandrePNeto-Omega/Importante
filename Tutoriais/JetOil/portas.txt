@@ -1,0 +1,5 @@
+5470 = porta do banco de dados do JetOil 
+
+5471 = porta da sincronia
+
+Sempre usar o 127.0.0.1 ao ínves do LOCALHOST

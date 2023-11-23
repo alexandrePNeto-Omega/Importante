@@ -57,7 +57,7 @@ configurações>muilti empresa> configurar servidores
 			
 
 Begin;
-update pgd_hosts set flowlimit = '500000' where sid in (29, 30);
+update pgd_hosts set flowlimit = '500000' where sid in (29, 31);
 		
 as_sync
 

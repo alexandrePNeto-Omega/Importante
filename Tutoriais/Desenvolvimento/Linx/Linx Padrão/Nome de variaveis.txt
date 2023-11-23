@@ -1,0 +1,11 @@
+Nomes de Variáveis
+Dê nomes sugestivos às variáves. Não utilize, por exemplo, apenas uma letra.
+Nome das variáveis dicionários, listas e tuplas devem ter, como sufixo, seu tipo respectivo.
+
+nota_list = []
+produto_dict = {}
+semana_tuple = ()
+tempo_transcorrido_dias = 15
+ecf_ativa = True
+valor_nota = 100.00
+nome = 'João'

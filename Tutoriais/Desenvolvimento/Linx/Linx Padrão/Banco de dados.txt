@@ -1,0 +1,49 @@
++------------------------------------------------------------------------------------------------------------+
+Para passagem de parâmetros em SQL utilizar o sqlquote() disponibilizado pela biblioteca LxTypes.
++------------------------------------------------------------------------------------------------------------+
+Banco de dados
+É necessário saber como funcionam as estruturas utilizadas para manipulação do banco de dados, dessa forma podemos atuar de forma assertiva na utilização das funções.
+
+Informações úteis:
+
+Retorno das funções do lztdb:
+
+- getresult(sql)  > tupla de valores = (, , , ,)
+
+- dictresult(sql) > lista de dicionários = [{}, ...]
+
+- firstresult(sql) > primeiro resultado = Valor (inteiro, string, etc...)
+
+- singleresult(sql) > lista de valores = []
+
+- firstdictresult(sql) > primeiro dicionário = {} ou None
+
+- execute(sql) > None (executa o comando)
++------------------------------------------------------------------------------------------------------------+
+Forma correta para se utilizar a consulta SQL:
+
+def get_nota_fiscal(self, filtro_dict):
+    param_dict = {
+        'empresa': TLong.sqlquote(filtro_dict['empresa']),
+        'data_emissao': TDate.sqlquote(filtro_dict['data']),
+    }
+ 
+    sql = "select nf.id "\
+            ",nf.data_emissao "\
+            ",nfp.produto "\
+        "from nota_fiscal nf "\
+            "join nota_fiscal_produto nfp on (nfp.nota_fiscal_id = nf.id) "\
+        "where nf.empresa = %(empresa)s "\
+            "and nf.data_emissao = %(data_emisao)s" % param_dict
+ 
+def get_pessoa(self, filtro_dict):
+    where_list = ['true']
+ 
+    if filtro_dict.get('nome'):
+        where_list.append('nome = %s' % TString.sqlquote(filtro_dict['name']))
+ 
+    if filtro_dict.get('cpf'):
+        where_list.append('cpf = %s' % TString.sqlquote(filtro_dict['cpf']))
+ 
+    sql = "select id, nome, cpf from pessoa where %s" % " and ".join(where_list)
++------------------------------------------------------------------------------------------------------------+

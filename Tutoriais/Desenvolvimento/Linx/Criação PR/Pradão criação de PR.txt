@@ -1,0 +1,21 @@
+
+----------------------------------------
+Padrão para criação de PR
+
+** Rotina **
+
+
+** Rotina impactada **
+
+
+** Problema **
+
+
+** Correção **
+
+
+** Procedimentos **
+
+
+Informar link da Issue
+----------------------------------------

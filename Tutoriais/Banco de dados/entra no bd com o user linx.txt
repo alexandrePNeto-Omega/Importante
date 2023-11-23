@@ -1,0 +1,3 @@
+entra no bd com o user linx
+
+psql -h 127.0.0.1 -p 5687 -d autosystem -U linx

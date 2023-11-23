@@ -1,0 +1,7 @@
+psql --version (mas eu gosto de usar esse)
+
+ou 
+
+su - postgres
+
+ls

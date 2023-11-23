@@ -16,6 +16,14 @@ Rotina para o relatório de ajuste:
 	Relatórios > Ajusta motivo genérico
 		
 
+QUANDO TEM QUE VER PELA CONFERÊNCIA DE CAIXA PARCELADO:
+	Tu vai no botão caixa, coloca as informações do caixa como turno, dia a etc. Clica em abrir, vai na aba financeiro, seleciona o motivo, depois o lançamento 
+clica em venda, ou rastresar, e ve todos os que tão vinculados a ele, aí aí tu pega a forma certa, pegando a forma certa, sai desse botão e vai no botão trocar e coloc
+a forma de pagamento que tu viu lá, ali (lembrando que o só vincula se tiver o mesmo documento).
+
+
+SE NA FORMA DE PAGAMENTO FICAR EM BRANCO SIGNIFICA QUE O AJUSTE FOI FEITO NA CONFERêNCIA DE CAIXA E A PRÓXIMA TRANSASÃO VAI CAIR COMO GENÉRICA.
+
 select * from tef_transacao where ts_transacao = 'AA/mm/d hh:mm:ss';
 
 select * from tef_transacao where ts_transacao = '2023/07/09 11:48:46';

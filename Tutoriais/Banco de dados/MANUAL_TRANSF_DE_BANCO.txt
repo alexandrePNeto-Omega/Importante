@@ -1,0 +1,30 @@
+MANUAL "Processos de transferir banco de dados de uma maquina para outra":
+
+> Pare todo o service e não deixe ninguém usar
+> Gere um DUMP do BD que deseja transferir
+	- Para isso: 
+pg_dump -b nome_do_banco > nome_do_dump.sql
+
+> Transfira esse DUMP para a máquina que vai usar:
+	- Dica: use o FileZilla.
+> Instale o postgresql na máquina
+	- Para isso:
+sudo su
+apt install postgresql
+
+> Entre no usuário do postgres
+	- Para isso:
+su - postgresql
+
+> Crie um BD com o encoding SQL_ASCII
+	- Para isso:
+CREATE DATABSE nome_do_banco TEMPLATE template0 ENCODING 'SQL_ASCII';
+
+> Agora carregue o dump para a base recém criada:
+	- Para isso:
+		* Precisa ir ao diretório que o arquivo do dump está.
+		* saia do usuário postgres:
+exit
+		* Vá até o diretório do dump com o 'cd'
+		* Então (precisa do sudo para ter a permissão):
+sudo -u postgres psql nome_do_banco < nome_do_arquivo.sql

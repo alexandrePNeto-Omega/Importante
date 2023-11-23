@@ -1,0 +1,20 @@
+2023-05-19 17:10:31,978: linxpos: DEBUG: defcur_3720.execute on exchange: "
+
+
+
+
+
+
+SELECT (CASE WHEN jp.tipo_oleo = '877' THEN 1 WHEN jp.tipo_oleo = '876' THEN 2 ELSE 3 END) AS ordem, jp.fracionado, jp.especificacao_1, jp.especificacao_2, jp.codigo, p.nome as descricao, jp.id as jetoil_produto_id, jp.jetoil_grupo_produto_id, jp.produto_id, jp.tipo_oleo, (CASE WHEN jp.brinde_troca THEN 0.01 ELSE COALESCE(p.preco_unit, 0) END) AS preco_unit, False as is_recomendado , (CASE WHEN ejcpgpm.check_point < 11 and jp.especificacao_1 is not null THEN ejcpgpm.check_point ELSE 0 END) as check_point  
+
+
+FROM exchange.jetoil_produto jp 
+JOIN dataload.produto p ON (jp.produto_id=p.id) 
+
+left join exchange.jetoil_grupo_produto jsgp on (jsgp.id=jp.jetoil_grupo_produto_id and jsgp.parent is not null) 
+
+left join exchange.jetoil_grupo_produto jgp on (jgp.id=jsgp.parent) left join exchange.jetoil_check_point_grupo_produto_map ejcpgpm on (jgp.codigo=ejcpgpm.grupo_produto_codigo)  
+
+where (jp.codigo='7891165009730' or lower(p.nome) like lower('%7891165009730%')) 
+and (not jp.resgate or jp.resgate is null) 
+and p.preco_unit > 0.0 ORDER BY ordem, descricao;

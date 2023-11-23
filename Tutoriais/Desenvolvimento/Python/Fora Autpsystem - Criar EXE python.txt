@@ -1,0 +1,15 @@
+-----------EXECUTAVEL----------------
+
+pip install pyinstaller
+
+ 
+
+ 
+
+pyinstaller.exe --onefile --windowed --icon=icone.ico main.py
+
+ 
+
+pasta build se quiser pode apagar
+
+pasta dist é executavel

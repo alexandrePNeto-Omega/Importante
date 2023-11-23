@@ -1,0 +1,5 @@
+Povoo, quando forem rodar o vacuum no postgres 13, se rodar o comando assim:
+vacuum full analyse verbose;
+vai dar erro
+rodem assim que da certo:
+vacuum full verbose analyse;

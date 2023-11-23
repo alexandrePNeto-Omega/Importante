@@ -1,0 +1,2 @@
+Lançar medição de tanque:
+	Estoque > Inventário > Registrar medição de tanque

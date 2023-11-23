@@ -582,3 +582,158 @@ CREATE INDEX IF NOT EXISTS pessoa_agregado_banco_flow_ix2
     ON public.pessoa_agregado_banco_flow USING btree
     (grid ASC NULLS LAST)
     TABLESPACE pg_default;
+
+---------
+
+-- Table: public.exchange_emsys_gestao_config_empresa_flow
+
+-- DROP TABLE public.exchange_emsys_gestao_config_empresa_flow;
+
+CREATE TABLE public.exchange_emsys_gestao_config_empresa_flow
+(
+  pgd_gfid bigint,
+  pgd_username text,
+  pgd_host text,
+  pgd_optype text,
+  pgd_when timestamp(0) without time zone,
+  pgd_rfid bigint,
+  pgd_flow_flag text,
+  pgd_module text,
+  pgd_version text,
+  grid bigint,
+  empresa bigint,
+  reprocessamento_estoque_todas boolean,
+  reprocessamento_estoque_filial boolean,
+  movimentacao_estoque_filial boolean,
+  movimentacao_estoque_todas boolean,
+  tipo_saldo text,
+  periodo text,
+  horario text,
+  turno integer,
+  desabilitar_estoque_combustivel_todas boolean,
+  desabilitar_estoque_combustivel_filial boolean,
+  desabilitar_estoque_lmc_filial boolean,
+  desabilitar_estoque_lmc_todas boolean,
+  inventario_estoque_filial boolean,
+  inventario_estoque_todas boolean
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.exchange_emsys_gestao_config_empresa_flow
+  OWNER TO postgres;
+GRANT ALL ON TABLE public.exchange_emsys_gestao_config_empresa_flow TO postgres;
+GRANT ALL ON TABLE public.exchange_emsys_gestao_config_empresa_flow TO distro;
+GRANT SELECT ON TABLE public.exchange_emsys_gestao_config_empresa_flow TO promo;
+GRANT ALL ON TABLE public.exchange_emsys_gestao_config_empresa_flow TO public;
+
+-- Index: public.exchange_emsys_gestao_config_empresa_flow_ix1
+
+-- DROP INDEX public.exchange_emsys_gestao_config_empresa_flow_ix1;
+
+CREATE INDEX exchange_emsys_gestao_config_empresa_flow_ix1
+  ON public.exchange_emsys_gestao_config_empresa_flow
+  USING btree
+  (pgd_gfid);
+
+-- Index: public.exchange_emsys_gestao_config_empresa_flow_ix2
+
+-- DROP INDEX public.exchange_emsys_gestao_config_empresa_flow_ix2;
+
+CREATE INDEX exchange_emsys_gestao_config_empresa_flow_ix2
+  ON public.exchange_emsys_gestao_config_empresa_flow
+  USING btree
+  (grid);
+
+---------
+-- Table: public.nota_fiscal_nsu_flow
+
+-- DROP TABLE public.nota_fiscal_nsu_flow;
+
+CREATE TABLE public.nota_fiscal_nsu_flow
+(
+  pgd_gfid bigint,
+  pgd_username text,
+  pgd_host text,
+  pgd_optype text,
+  pgd_when timestamp(0) without time zone,
+  pgd_rfid bigint,
+  pgd_flow_flag text,
+  empresa bigint,
+  nsu bigint,
+  grid bigint
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.nota_fiscal_nsu_flow
+  OWNER TO postgres;
+GRANT ALL ON TABLE public.nota_fiscal_nsu_flow TO postgres;
+GRANT ALL ON TABLE public.nota_fiscal_nsu_flow TO distro;
+GRANT SELECT ON TABLE public.nota_fiscal_nsu_flow TO promo;
+
+-- Index: public.nota_fiscal_nsu_flow_ix1
+
+-- DROP INDEX public.nota_fiscal_nsu_flow_ix1;
+
+CREATE INDEX nota_fiscal_nsu_flow_ix1
+  ON public.nota_fiscal_nsu_flow
+  USING btree
+  (pgd_gfid);
+
+-- Index: public.nota_fiscal_nsu_flow_ix2
+
+-- DROP INDEX public.nota_fiscal_nsu_flow_ix2;
+
+CREATE INDEX nota_fiscal_nsu_flow_ix2
+  ON public.nota_fiscal_nsu_flow
+  USING btree
+  (grid);
+
+---------------
+
+-- Table: public.recado_placa_flow
+
+-- DROP TABLE public.recado_placa_flow;
+
+CREATE TABLE public.recado_placa_flow
+(
+  pgd_gfid bigint,
+  pgd_optype character varying(2),
+  pgd_when timestamp without time zone,
+  pgd_username character varying(30),
+  pgd_flow_flag character(1),
+  pgd_rfid bigint,
+  pessoa_id text,
+  recado text,
+  ts timestamp without time zone,
+  avisado timestamp without time zone,
+  grid bigint,
+  pgd_host text
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.recado_placa_flow
+  OWNER TO distro;
+GRANT ALL ON TABLE public.recado_placa_flow TO distro;
+GRANT SELECT ON TABLE public.recado_placa_flow TO promo;
+
+-- Index: public.recado_placa_flow_ix1
+
+-- DROP INDEX public.recado_placa_flow_ix1;
+
+CREATE INDEX recado_placa_flow_ix1
+  ON public.recado_placa_flow
+  USING btree
+  (pgd_gfid);
+
+-- Index: public.recado_placa_flow_ix2
+
+-- DROP INDEX public.recado_placa_flow_ix2;
+
+CREATE INDEX recado_placa_flow_ix2
+  ON public.recado_placa_flow
+  USING btree
+  (grid);
+

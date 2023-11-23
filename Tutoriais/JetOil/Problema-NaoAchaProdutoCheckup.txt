@@ -1,0 +1,42 @@
+cd:\JetOil\pgsql\bin
+
+port:5470
+api:5471
+
+Banco Jetoil:
+select jetoil_grupo_produto_id, * from exchange.jetoil_produto where codigo='???';
+select count(*) from exchange.jetoil_check_point_grupo_produto_map;
+select * from exchange.jetoil_grupo_produto;
+Caso o count(*) from diferente nos 2 bancos executar os processos abaixo:
+select * from exchange.jetoil_grupo_produto where id=jetoil_grupo_produto_id;
+
+Banco AutoSystem:
+select count(*) from exc_jetoil_check_point_grupo_produto_map;
+
+Caso tudo der certo, basta rodar a sincronia do JetOil
+
+
+
+Encerrar Jet Oil: sync.exe
+Encerrar as sincronias: main.exe (todos)
+
+Realizar os comandos abaixo:
+
+BD - Jet
+
+--delete from exchange.ipp_grupo_produto;
+--delete from exchange.jetoil_produto;
+--delete from exchange.jetoil_check_point_grupo_produto_map;
+
+--delete from exchange.sync_dataload where tabela='ipp_grupo_produto';
+--delete from exchange.sync_dataload where tabela='jetoil_produto';
+--delete from exchange.sync_dataload where tabela = 'jetoil_check_point_grupo_produto_map';
+
+BD - AS com Usuario linx:
+--update exc_ipp_grupo_produto set grid=grid;
+--update exc_ipp_subgrupo_produto set grid=grid;
+--update exc_ipp_produto_jo set grid=grid;
+--update exc_jetoil_check_point_grupo_produto_map set id=id;
+--update produto set grid=grid wh
+
+-- Executar a Sincronia AS e depois a Sincronia Jet

@@ -1,0 +1,3 @@
+except:
+            import traceback
+            self.ws.log.error(traceback.format_exc())

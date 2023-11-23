@@ -1,0 +1,3 @@
+Quando for uma lista que ver no paramento do GET em um requisisão
+import json
+Basta usar o json.loads(forma de busca)
