@@ -1,0 +1,51 @@
+Priomeria cosia: intalar os drivers da mesa (veja o qual é o modelo para instalar o drive certo)
+	- WacomTablet_6.3.46-2
+	- Tudo de "sdk-for-signature-windows-4.7.2"
+
+Depois de instalar tudo reinicie o computador, LEMBRE SEMPRE DE AVISAR A PESSOA DO ACESSO QUE TU VAI REINICIAR O PC.!
+
+Entrar no drive da mesa e desabilitar o botão da caneta "propriedade da mesa".
+
+"C:\Program Files\Common Files\WacomGSS\FlCaptureAnalyser.exe"
+
+
+Dentro do soft
+	- service > test capture >  wintab
+	
+Agora no autosystem gerencial
+	configurações>modulos>assinatura digital
+	
+	dentro do menu:
+		- Ative a assinatura
+		- e em comprovante coloque banco de dados
+		- diretório: 
+		- prefixo (opcianal): serve como um prefixo do posto tipo P01 - assinatura
+	
+	RÓTINA PARA O GRUPO OU CLIENTE
+	cadastros>clientes>politica comercial>contas>
+		- Adicione a nota prazo
+		- ative o flag da assinatura
+
+	cadastros>grupo de pessoas>vencimentos
+		- Adicione a nota prazo
+		- ative o flag da assinatura
+
+	FORMA DE PAGAMENTOP:
+	cadastros>motivo de movimentação>  seleciona a forma de pagamento (nota prazo normalmente)
+		- ECF/TEF
+			Emitir comprovante: RELATÓRIO GERENCIAL
+
+		- Layout: 
+			e deixa assim:
+
+inici totalizador 30 - 1
+
+Reconheço e pagarei a dívida acima
+-
+-
+-
+      &assinatura_digital;
+			
+		
+
+		

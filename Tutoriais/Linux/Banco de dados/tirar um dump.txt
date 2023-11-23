@@ -1,0 +1,45 @@
+Conteúdo
+Se voce está gerando o dump de uma base certifique-se de que ninguem está acessando a base.
+Acesse o postgresql.conf e sete as conexões como localhost
+
+Pare a sincronia, e avise no grupo do suporte de que parou a sincronia.
+
+
+Acessa com root
+acessa usuario postgres:
+su - postgres
+
+Lista os banco de dados:
+psql -l
+
+gera dump:
+pg_dump -v nome_do_banco > nome_do_arquivo.sql
+
+Quando terminar volte para o usuario root
+exit
+
+acessa onde o dump foi tirado:
+cd /var/lib/postgresql
+
+veja se o dump da na pasta:
+ls
+
+mova o dump para outro diretorio:
+mv nome_do_arquivo.sql /home
+
+acessa o diretorio:
+cd /home
+
+baixe o rar
+apt-get install rar
+
+Compacta o dump:
+rar a nome_do_arquivo.sql.rar nome_do_arquivo.sql
+
+ 
+
+No servidor de destino, para descompactar o arquivo usar o unrar:
+apt-get install unrar
+
+Para descompactar:
+unrar x nome_do_arquivo.sql.rar

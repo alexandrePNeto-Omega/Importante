@@ -1,0 +1,20 @@
+TICKETS DIAS - LOG (TEMPLATE)
+
++--------------TICKETS_GERAL--------------+
+DATA                        =   00/00/00;
+
++--INÍCIO_DO_DIA--+
+ABERTOS                     =   000;
+ESTOURADOS                  =   000;
+
++--FINAL_DO_DIA--+
+FECHAMENTO                  =   000;
+ESTOURADOS                  =   000;
+FINALIZADOS NO MILVUS       =   000;
+FINALIZADOS NO WORKFLOW     =   000;
+
++-MEUS_TICKETS-+
+INÍCIO                      =   000;
+FIM                         =   000.
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+

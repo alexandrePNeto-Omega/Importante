@@ -1,0 +1,1 @@
+ps -aux | grep sync/__init__.pyc

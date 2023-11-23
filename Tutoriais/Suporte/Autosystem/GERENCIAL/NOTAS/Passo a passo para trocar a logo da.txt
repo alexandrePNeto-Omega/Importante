@@ -1,0 +1,21 @@
+Passo a passo para trocar a *logo* da *DANFE*:
+
+*Importante*: _Verificar_ se o arquivo conta com o nome de *nfe* e sua extensão como *.gif*
+
+1º Baixar o aquivo *nfe.gif* e descompactar (caso seja o arquivo compactado)
+
+2º Abrir o diretório da pasta *share\imagens* do autosystem:
+	- Caminho padrão: C:\autosystem\share\images
+
+3º Verificar se não existe nenhum aquivo como *nfe.gif* na pasta:
+	- Caso tenha, copie ele e salve em algum lugar para usar como backup 
+	e apague ele do diretório: C:\autosystem\share\images
+
+4º Copie o arquivo baixado *nfe.gif* e cole no diretório do autosystem: 
+	- Caminho padrão: C:\autosystem\share\images
+
+5º Realizar um teste e validar como a logo se encontra na *DANFE*
+
+
+
+

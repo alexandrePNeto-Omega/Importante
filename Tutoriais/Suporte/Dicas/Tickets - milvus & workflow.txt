@@ -1,0 +1,79 @@
++---    Ticket Resposta   ---+
+
+Olá, seu ticket já está em minha fila, e em breve estarei retornando sobre!
+
+Atenciosamente, Alexandre.
+Suporte Omega.
+
++---    Finalização    ---+
+
+Fico a disposição para para quaisquer eventuais dúvidas, para isso, basta retornar a este e-mail, que o ticket será reaberto.
+
+Atenciosamente, Alexandre.
+Suporte Omega.
+
++---    MILVUS - SINCRONIA ---+
+
+Abertura:
+    Cliente:                Nome do posto;
+    Contato:                Linx;
+    Assunto do problema:    Sincronia atrasada.
+    Tipo do ticket:         Problema;       
+    Descrição:              Em nossa monitoria, a sincronia apresentou atraso.
+    Categoria:              Sincronia;
+    Tecnico:                ...;
+    Setor:                  Suporte.
+
+ Fechamento:
+    Serviço:                Realizado o ajuste na sincronia.
+
+ +---   WORK FLOW - SINCRONIA  ---+
+
+Abertura:
+    Conta solicitante:         CNPJ do posto;
+        > Abir Chamado
+            Meio de comunicação:    Parceria/franquia;
+            Complexidade:           Indefinida;
+            Resumo do problema:     Linux - Sincronia atrasada.
+            Detalhes:               
+Versão: 3.3.1.94
+Rotina: as_sync
+Modulo: sincronia
+Sistema Operacional: Linux
+
+Descrição: Em nossa monitoria, a sincronia apresentou atraso.
+
+            Unidade de negócio:     Franqueado postos - Autosystem;
+            Tipo:                   Incidente;
+            Produto:                Autosystem;
+            Módulo:                 Omega;
+            Departamento:           Caixa;
+            Funcionalidade:         Pista;
+            Indisponibilidade:      SIM - SIM.     
+
+                > Salvar.
+
+    Fechamento:
+        > Fila de atendimento:
+            > Clica no botão de "play";
+                Resumo:             Conclusão.
+                Detalhes:           Realizado o processo de sincronização no posto.
+
+                > Status: 
+                    > Concluida:
+                        > Dimensão: Solicitação resolvida.
+                        > Detalhe:  Dados corrigidos.
+                            > Salvar.
+
+                > Confirmar Movimentação.
+
++---    MILVUS - PEGANDO OS FINALIZADOS    ---+
+    Relatórios:
+        > Tickets po cliente:
+            > Filtra por técnico e dia:
+                > Seleciona o ticket:
+                    > Análitico;
+                        > Pega o CNPJ do cliente dentro do ticket.
+
+                        Encaminhamento interno. n - s
+                

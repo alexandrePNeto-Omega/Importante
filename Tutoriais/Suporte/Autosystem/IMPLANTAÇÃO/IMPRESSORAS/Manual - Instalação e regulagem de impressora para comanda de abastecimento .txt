@@ -1,0 +1,49 @@
+Manual - Instalação e regulagem de impressora para comandas de pista
+
+Precisa do vspe
+
+https://eterlogic.com/Products.VSPE.html
+
+Necessitamos dos dados da impressora:
+	- Modelo;
+	- Tipo de conexão (USB ou IP);
+	- Caso seja IP, o IP dela com a porta (porta padrão: 9100).
+	- Acesso a máquina do concentrador para instalar.
+
+
+- Acesse o cliente;
+- Instale o vspe (PERGUNTE SE PODE REINICIAR A MÁQUINA (basta trnasferir o executável pelo anydesk));
+- De um ping no ip da impressora para ver se ela está conectada;
+- Emule uma porta COM com o vspe (com = porta usb)
+	- create new device:
+		- conector
+			- escolha a COM (de preferencia COM5)
+	- create new device:
+		- tcp client
+			- Coloque O IP da impressora;
+			- e a porta padrão (9100)
+			- coloque a COM que foi feita acima
+- salve na area de trabalho como: config_vspe
+
+cadastros>tabelas>equipamentos>impressora não fiscal
+Exemplo do padrão do nome: 
+BEMATECH 4200 TH - 192.168.4.115 - COM4
+nome - ip - porta
+
+cadastros>tabelas>vendas>regras de impressão
+coloca o grupo: geralmente combútivel
+impressora: a que foi cadastrada
+
+config_local:
+	- automação de bombas
+	- ativa "Ativar comanda de abastecimetno"
+	- salva.
+
+win + r = shell:startup
+joga o config_vspe na pasta e apaga o atalho do vspe.
+
+- Configurar o layout da impressora:
+	Vai no bematchUser (app)
+
+- Caso o modelo seja o ADV: segue a configuração
+

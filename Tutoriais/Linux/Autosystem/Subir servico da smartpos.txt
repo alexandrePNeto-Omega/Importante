@@ -1,0 +1,15 @@
+Subir servico da smart
+
+Olhar no script so service_verifica se tem ele:
+cat /etc/crontab
+
+
+Comanda que lista quantos serviços do smart postef estão ativos:
+ls | ps -e -o command | grep "python2.7 autosystem.pyc --smartpostef" | wc -l
+
+
+Para ver o LOG e verificar se estão rodando:
+tail -f as_smartpostef.log
+
+Para subir a smart novamente:
+as_smartpos restart

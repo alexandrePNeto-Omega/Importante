@@ -1,0 +1,1 @@
+service cron stop / start / status / restart =  para parar o serviço do contrab

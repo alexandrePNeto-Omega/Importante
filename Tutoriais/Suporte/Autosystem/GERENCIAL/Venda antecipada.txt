@@ -1,0 +1,22 @@
+cadastros>motivo de movimentação>novo
+nome: DEPOSITO ANTECIPADO - BANCO
+conta debitar: BANCOS
+conta creditar: VENDA ANTECIPADA
+tipo movto: NORMAL
+
+aba campos> marca pessoa como requerido
+
+
+cadastros>motivo de movimentação>novo
+nome: PAGAMENTO ANTECIPADA - VENDA
+conta debitar: VENDA ANTECIPADA
+conta creditar: PONTOS DE VENDA
+tipo movto: FORMA DE PAGAMENTO e marca a flag também
+
+aba campos> marca pessoa e valor como requerido
+aba INFORMAÇÕES> tipo nf-e= crédito loja, tipo pagamento CF-e= crédito loja
+
+---------------------------------------------------------------------------
+
+Consultar o crédito do cliente no venda antecipada:
+consultas>crédito de clientes>coloca o cliente>cleinte e pagamento antecipado

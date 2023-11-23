@@ -1,0 +1,33 @@
++--  CONTAGEM  --+
+
+https://gestaosoft.com/projeto/admin/login
+login: alexandre@omegaautomacao.com
+
+//	Cadastros que precisa
+Cadastrar grupo
+Cadastrar cliente
+Cadastrar o usuário
+
+//	Para testar o usuário e sincronizar
+https://gestaosoft.com/contagem
+e depois sincronize
+
++--          --+
+
+Gestão Coletor de dados
+
+-----------------------
+
+
+gestaosoft.com
+10025
+alexandre
+Myp4$$2$3ver?!)(_
+Myp4$$2$3ver?!)(_
+Myp4$$2$3ver?!)(_
+Myp4$$2$3ver?!)(_
+Myp4$$2$3ver?!)(_
+Myp4$$2$3ver?!)(_
+Myp4$$2$3ver?!)(_
+
+cd /home/atualizacao/ftp/files/

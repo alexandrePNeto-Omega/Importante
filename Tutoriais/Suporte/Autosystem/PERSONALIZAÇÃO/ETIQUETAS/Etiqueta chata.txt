@@ -1,0 +1,7 @@
+<campo chave="nome" fonte_tamanho="20"/>
+<rotulo alinar="esquerda" quebra="nao" fonte_tamanho="48" texto="R$ "/>
+<campo chave="preco_unit" alinhar="centro" formato="valor" fonte_tamanho="48"/>
+<rotulo fonte_tamanho="20" texto=" "/>
+<cod_barra chave="codigo_barra" largura="3.0" quebra="nao" tipo="ean13" altura="0.8"/>
+<rotulo quebra="nao" fonte_tamanho="20" texto=""/>
+<rotulo fonte_tamanho="15" texto="GRUPO MAHLE" inicio="2.8"/>

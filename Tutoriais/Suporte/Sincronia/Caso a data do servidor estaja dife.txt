@@ -1,0 +1,18 @@
+Caso a data do servidor estaja diferente
+
+date --set hora_atual
+
+hwclock --systohc
+
+timedatectl list-timezones
+
+sudo timedatectl set-timezone America/Sao_Paulo
+
+-----------------------------------------------
+date --set "Jun 21 2023 09:23:00"
+
+hwclock --systohc
+
+timedatectl list-timezones
+
+sudo timedatectl set-timezone America/Sao_Paulo

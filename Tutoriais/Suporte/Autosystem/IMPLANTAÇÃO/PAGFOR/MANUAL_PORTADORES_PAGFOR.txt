@@ -1,0 +1,71 @@
+ENTRE NA VERSÃO 47 OU MAIS ANTIGA PARA CADASTRAR O PORTADOR:
+- Conta corrente & dígito verificador;
+
+- Agência & dígito verificador;
+
+- Convênio.
+
+> Vá no cadastros de portadores;
+> Preencha o código e nome no padrão
+	- código: nº_cod + cod_posto
+		ex: 
+			* nº cod = 3
+		 	* cod posto = 01
+
+		resultado = 301.
+		
+		Dica: Sempre fica em 3 casas.
+
+	- nome: cod_posto + pagfor + banco + CC nºconta + nome_posto
+
+	ex: 
+		* nº posto = 01
+		* banco = sicredi
+		* conta = CC 2222
+		* nome do posto = AUTO POSTO VARELA LTDA
+		
+	resultado: 01 - PAGFOR - SICREDI CC 22222 - AUTO POSTO VARELA LTDA
+
+> marque a flag portador bancário
+> modadelidade: pagamento a fornecedor
+> layout padrão: PADRÃO 3 VIAS
+
+> INFORMAÇÕES GERAIS: convênio, coloque 1, depois arrumamos no banco com o update;
+
+> ARQUIVO: 
+	cire uma pasta no C: chamada:
+			* C:\PAGFOR
+				> dentro dela mais duas pastas chamadas:
+					- remessa
+					- retorno
+	Preencha os diretórios com os diretórios dela.
+C:\PAGFOR\remessa
+C:\PAGFOR\retorno
+
+AGORA ENTRE NA VERSÃO 98 OU MAIS RECENTE
+> Vá no cadastros de portadores;
+> INFORMAÇÕES GERAIS: pode editar e colocar o código certo agora.
+
++--- FINALIZAÇÃO ---+
+
+Realizado o cadastro do portador: {cod_portador}
+
+Segue abaixo um print da configuração:
+{img_config_portador}
+
+Por gentileza,realizar a validação.
+
+Qualquer coisa, retornar a este e-mail para que o ticket seja reaberto.
+
++--- CASO PRECISE DO BANCO DE DADOS ---+
+
+SELECT * FROM portador;
+
+/ -- caso estaja como integer --\
+UPDATE portador SET convenio_aux = "cod_do_conv" WHERE codigo = "cod_do_portador";
+
+/ -- caso contrário --\
+
+UPDATE portador SET convenio = "cod_do_conv" WHERE codigo = "cod_do_portador";
+
+REALIZA

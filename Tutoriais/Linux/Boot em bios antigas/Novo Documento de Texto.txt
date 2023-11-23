@@ -1,0 +1,5 @@
+Pendrive: MBR a forma mais antiga.
+
+F2 - No menu "Boot" colocar o em "Boot List Option": "Legacy"
+
+F12 - Na escolha do boot, colocar a opção no modo "LEGACY OPTIONS: USB Stoarge Device." 

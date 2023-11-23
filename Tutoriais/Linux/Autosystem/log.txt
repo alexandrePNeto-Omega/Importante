@@ -1,0 +1,10 @@
+Como estender o log no linux
+
+acesse
+
+cd /usr/local/autosystem3/bin -> atalho do autosystem ficam aqui
+
+
+dentro do atalho que quer estender o log coloca:
+export ASLOGLEVEL=10
+

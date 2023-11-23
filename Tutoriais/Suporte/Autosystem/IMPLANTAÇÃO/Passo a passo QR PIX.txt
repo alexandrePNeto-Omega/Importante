@@ -1,0 +1,44 @@
+Passo a passo QR PIX
+
+- Criar no Plano de contas 1.3..:
+	Nome						: LINX PAY - QR LINX
+	Tipo						: Conta a receber
+	Aceita lançamentos				: Marcado
+
+- Criar o motivo de movimentação:
+	Cadastro > Motivo de movimentação 
+		Nome					: LINX PAY - QR LINX
+		Conta a debitar				: LINX PAY - QR LINX
+		Conta creditar				: PONTOS DE VENDA
+		
+		Tipo movto:				FORMA DE PAGAMENTO & flag da forma marcada
+		
+		ABA Informações
+		Informações adicionais			: QR Linx
+		Tipo pag...			  	: Pagamento Instantâneo (PIX)
+		Credenciadora		  		: 035 - STONE PAGAMENTOS S.A.
+
+- Configurações
+	Configurações > Parâmetros > Motivos de Movimentação
+		- QRLINX_GENERICO			: LINX PAY - QR LINX
+		- RECEBIMENTO PIX			: LINX PAY - QR LINX
+		
+		
+- No config_local
+	QR Linx | PIX
+		> Ative
+			- Habilitar pagamentos marcado
+			- Habilitar impressão marcado.
+			- Clique em ativar.
+			
+					
+========== QR LINX ==========
+Data...........: &data;
+Payment ID.....: &payment_id;
+Order ID.......: order_id
+Transaction ID.: &transaction_id;
+Wallet.........: &trading_name;
+Valor..........: &valor;
+
+
+Colocar a impressora no modo qualidade

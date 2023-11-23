@@ -1,0 +1,24 @@
+Passo a passo, registrar nota de entrada
+(com arquivo)
+
+Requesitos:
+	- Arquivo XML da nota; 
+
+Rotina para registrar a nota:
+	Estoque > Entradas > Registrar Nota de Entrada
+		- Selecionar a opção do arquivo XML
+		- Colocar o arquivo
+		- Se for pela matriz, selecione a empressa
+
+	- Coloque o o dia, turno 1 e a hora a mais cedo possível
+
+	- confirme e saia;
+
+Rotina para a manutenção:
+	Estoque > Entradas > Manutenção de Notas de Entrada
+		- Selecione a nota atráves do fornecedor ou como quiser
+		- Edite o que quer
+
+Rotina para colerir o relatório:
+	Estoque > Relatório > Manutenção de produtos
+	

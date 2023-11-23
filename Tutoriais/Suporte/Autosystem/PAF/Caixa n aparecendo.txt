@@ -1,0 +1,3 @@
+Quando o caixa não aparacer no PAF
+
+Geralmente acontece quando a chave é ipiranga, porém sempre verifique se o paf tá configurado.

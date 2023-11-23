@@ -1,0 +1,18 @@
+Manual - Alterar o tamanho de um campo em relatórios:
+
+- Configuração > Relatórios > Configurar
+
+- Ache o id referente ao campo que deve ser editado
+
+- Agora, basta ajustar e o campo o todos o resto entorno dele
+
+- E teste (indo na rotina que o relatório é testado).
+
+
++--- Finalização ---+
+
+Realizado o ajuste no relatório como solicitado.
+
+Segue a baixo um print do resultado:
+(print do resultado)
+

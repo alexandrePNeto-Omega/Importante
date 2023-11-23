@@ -1,0 +1,14 @@
+A conta mãe não aceita lançamentos.
+	> dentro da conta mãe, fica as contas onde aceitaram lançamentos.
+
+	ex:
+		1.1.2 - PONTOS DE VENDA (conta maãe)
+			> 1.1.2.01 - PDVS - POSTO 01 (conta maãe)
+				> 1.1.2.1.01 - PDV 01 - POSTO 01
+				> 1.1.2.1.02 - PDV 02 - POSTO 01
+			> 1.1.2.02 - PDVS - POSTO 02 (conta maãe)
+				> 1.1.2.2.01 - PDV 01 - POSTO 02
+				> 1.1.2.2.02 - PDV 02 - POSTO 02
+				
+Para o cadastro de empresas, colocamos o código 100 na matriz
+reservando do 1 ao 100 somente para empresas e caso tenho restaurante fica 50

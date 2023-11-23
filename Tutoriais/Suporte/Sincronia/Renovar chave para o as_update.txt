@@ -1,0 +1,17 @@
+cd /etc/
+
+cat autosystem.key
+	> salva esse cnpj em um bloco de notas
+	
+rm autosystem.key
+
+as_manutencao --renovar-chave
+
+Colca os dados do posto principal
+
+as_update
+
+rm autosystem.key
+
+as_manutencao --renovar-chave
+	> Coloca agora a informações do posto

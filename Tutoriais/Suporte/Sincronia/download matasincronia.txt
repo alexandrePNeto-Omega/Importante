@@ -1,0 +1,12 @@
+Tentar rodar no usuario /home/omega logo apos login:
+
+./mata_sincronia.sh
+
+Se dizer que nao existe o arquivo:
+
+wget ftp://integracao:0m3g4l1nx@gestaosoft.com/files/mata_sincronia.sh
+
+
+chmod +x mata_sincronia.sh
+
+./mata_sincronia.sh

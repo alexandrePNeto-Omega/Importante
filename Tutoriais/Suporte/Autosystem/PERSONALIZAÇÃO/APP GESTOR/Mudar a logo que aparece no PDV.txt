@@ -1,0 +1,1 @@
+A imagem da logo que aparece no PDV do AutoSystem poderá ser customizada na solicitação do voucher. Para utilizar uma imagem própria a mesma deve estar salva na pasta C:\autosystem\share\images\icones\logo_app_posto.png, com esta mesma nomenclatura.

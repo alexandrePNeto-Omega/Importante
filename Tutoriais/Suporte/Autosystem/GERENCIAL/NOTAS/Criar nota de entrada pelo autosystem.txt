@@ -1,0 +1,6 @@
+Criar uma nota de entrar pelo Autosystem:
+
+- Criar uma natureza de operação de entrada 5929;
+- Em seguida vinculála a uma 55;
+- Depois acesar a rotina:
+	> Financeiro > Fiscal > Lançamento de nostas fiscal >  Produção própria;

@@ -1,0 +1,19 @@
+Acessar o diretório:
+cd /home/
+
+
+Criar o arquivo:
+vi vacuum.sh
+
+
+Conteúdo do script "Vacuum.sh":
+#!/bin/bash
+su - postgres -c "/usr/bin/vacuumdb --d "nome_base" --full --analyze -U postgres"
+touch ok
+
+
+ 
+
+
+Dar permissão para o arquivo executar como script:
+chmod 0755 /home/vacuum.sh

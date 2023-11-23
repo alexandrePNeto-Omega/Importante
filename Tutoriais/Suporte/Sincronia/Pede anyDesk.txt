@@ -1,0 +1,7 @@
+Pede anyDesk
+acessa config_local
+pega o IP
+Putty
+reinicia o hamachi
+
+service logmein-hamachi restart

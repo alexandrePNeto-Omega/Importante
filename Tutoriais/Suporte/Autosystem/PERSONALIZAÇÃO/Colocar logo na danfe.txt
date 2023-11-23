@@ -1,0 +1,33 @@
+A nota 55 tem até 24 horas para ser cancelada
+
+Verificar a Natureza de opração
+NOTA REFERENTE A CUPOM
+COM ECF
+5.929
+salvar
+
+SERIE DE NOTA FISCAL
+- Colocar a natureza da operação acima
+
+No configuração > parêmetros > empresa > configurações> ver se a flag "permitir emissão de NF-e e NFC-e ativa
+
+------------
+
+
+Colocar logo na danfe
+
+share\images\nfe.gif
+
+financeiro>fiscal>emissão de nota fiscal referente a cupom>
+	- pega o destinatáio (quem tu quer que pegue o boleto)
+	- na aba nfc-e
+		> adicione o cupom que foi emitido
+		> busque
+
+	-salvar
+
+financeiro>fiscal> coloca o modelo 55
+
+	- seleciona a nota
+	- clica em danfe
+

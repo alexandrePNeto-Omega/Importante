@@ -1,0 +1,87 @@
+************INTERNO*************************
+Dados de contato: mario.junior
+E-mail: suporte@omegaautomacao.com
+Módulo: 
+Versão:
+Paliativo:
+
+
+Detalhamento do chamado:
+
+
+
+
+
+************sincronia********************
+Titulo 
+Linux - Sincronia travada
+
+Versao: 3.3.1.94
+Rotina: as_sync
+Modulo: sincronia
+Sistema Operacional: Linux
+
+Descricao: Em nossa monitoria, a sincronia apresentou atraso.
+
+
+
+
+Qualquer duvida estarei a disposiçao
+Mário Eduardo de Moura Ferreira Junior
+
+Telefone:(41)3339-9084
+Email: suporte@omegaautomacao.com
+Teams: mario.junior
+
+
+**************Conclusao*******************
+Realizado o processo de sincronização no posto
+
+**************Atualização servidor**********
+
+Titulo: 
+Linux - Atualização Autosystem
+
+Versao: 3.3.1.88
+Rotina: Atualização Servidor
+Modulo: Atualizador
+Sistema Operacional: Linux
+
+Descricao: Atualização preventiva para a ultima versão do Autosystem
+
+
+
+
+Qualquer duvida estarei a disposiçao
+Mário Eduardo de Moura Ferreira Junior
+
+Telefone:(41)3339-9084
+Email: suporte@omegaautomacao.com
+Teams: mario.Junior
+************Conclusao****************
+Conclusão:
+Concluida a atualização para a ultima versão do Autosystem
+
+
+**************Nota pendente********************
+Titulo: Notas pendentes
+
+Versao: 3.3.1.94
+Rotina: Financeiro>Fiscal>Gerenciamento de notas fiscais
+Modulo: Nativo
+Sistema Operacional: windows
+
+Descricao: Verificado em nossa monitoria notas pendentes 
+
+
+
+
+Qualquer duvida estarei a disposiçao
+Mário Eduardo de Moura Ferreira Junior
+
+Telefone:(41)3339-9084
+Email: suporte@omegaautomacao.com
+Teams: mario.Junior
+************Conclusao****************
+Conclusão:
+Concluido ajuste das notas pendentes 

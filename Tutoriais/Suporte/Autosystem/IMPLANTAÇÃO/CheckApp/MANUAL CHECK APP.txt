@@ -1,0 +1,25 @@
+MANUAL CHECK APP
+
+> Abra o config_local:
+	> CheckApp
+		- Coloque o diretório do CkeckApp (O diretório, é o diretório de download - pegue no chrome)
+
+> Depois crie um atalho do maix.exe
+	- Vá na propriedades dele:
+		- Destino: Adicione --checkapp
+		- Salve
+
+> Agora entre no Gerencial:
+	- Veja por grupo ou produto por produto se vais er exportado para o CheckApp
+		> Na janela do produto
+			> CheckApp e veja a flag
+
+> Agora execute o atalho que tu criou
+	> Vai estar no icones embaixo
+		- Selecione os produtos
+		- Salvar parânmetros	
+		- Exportar produto
+
+> Pedir para testar
+		
+	

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='iso8859-1'?>
+<relatorio saida="" ts="2023-07-17 10:58:07" versao_xml="0.1"><tela titulo="Etiquetas Com Código">
+  <quadro titulo="Parâmetros">
+    <procura id="empresa" modelo="empresa" requerido="sim" valor_padrao="select empresa from empresa_local" />
+    <caixa>
+      <procura id="grupo" modelo="grupo_produto" requerido="nao" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="subgrupo" modelo="subgrupo_produto" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto1" modelo="produto" titulo="Produto 1" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto2" modelo="produto" titulo="Produto 2" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto3" modelo="produto" titulo="Produto 3" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto4" modelo="produto" titulo="Produto 4" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto5" modelo="produto" titulo="Produto 5" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto6" modelo="produto" titulo="Produto 6" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto7" modelo="produto" titulo="Produto 7" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto8" modelo="produto" titulo="Produto 8" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto9" modelo="produto" titulo="Produto 9" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto10" modelo="produto" titulo="Produto 10" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto11" modelo="produto" titulo="Produto 11" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto12" modelo="produto" titulo="Produto 12" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto13" modelo="produto" titulo="Produto 13" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto14" modelo="produto" titulo="Produto 14" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto15" modelo="produto" titulo="Produto 15" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto16" modelo="produto" titulo="Produto 16" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto17" modelo="produto" titulo="Produto 17" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto18" modelo="produto" titulo="Produto 18" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto19" modelo="produto" titulo="Produto 19" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto20" modelo="produto" titulo="Produto 20" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto21" modelo="produto" titulo="Produto 21" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto22" modelo="produto" titulo="Produto 22" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto23" modelo="produto" titulo="Produto 23" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto24" modelo="produto" titulo="Produto 24" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto25" modelo="produto" titulo="Produto 25" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto26" modelo="produto" titulo="Produto 26" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto27" modelo="produto" titulo="Produto 27" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto28" modelo="produto" titulo="Produto 28" />
+    </caixa>
+    <caixa>
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto29" modelo="produto" titulo="Produto 29" />
+      <procura condicao="(grupo = $grupo or $grupo is null)" id="produto30" modelo="produto" titulo="Produto 30" />
+    </caixa>
+    <caixa>
+      <campo id="quantidade" requerido="sim" tipo="numero" valor_padrao="select 1" />
+      <check id="somente_comcodigobarra" titulo="Exibir somente Produtos com Código de Barra" />
+    </caixa>
+    <campo id="pos_inicio" requerido="sim" tipo="numero" titulo="Iniciar em" valor_padrao="select 1" />
+  </quadro>
+</tela><ajuda /><layout columns="1" dados="SELECT\n\tcodigo, now() as data,\n\t(case when codigo_barra = '' then codigo else codigo_barra end) as codigo_barra,\n  \tnome,\n  \tpreco_unit_empresa_f(grid,$empresa) as preco_unit,\n  \t$quantidade as nr_etiquetas, (select nome_reduzido from pessoa where grid = (select empresa from empresa_local limit 1)) as empresa,\n\t$pos_inicio as pos_inicio\nFROM\n  \tproduto\nWHERE\n\tflag='A' and \n  \t(case when $grupo is not null then grupo=$grupo else true end ) and \n  \t(case when $subgrupo is not null then subgrupo=$subgrupo else true end ) and \n\t(case when (\n\t\t$produto1 is not null or\n\t\t$produto2 is not null or\n\t\t$produto3 is not null or\n\t\t$produto4 is not null or\n\t\t$produto5 is not null or\n\t\t$produto6 is not null or\n\t\t$produto7 is not null or\n\t\t$produto8 is not null or\n\t\t$produto9 is not null or\n\t\t$produto10 is not null or\n\t\t$produto11 is not null or\n\t\t$produto12 is not null or\n\t\t$produto13 is not null or\n\t\t$produto14 is not null or\n\t\t$produto15 is not null or\n\t\t$produto16 is not null or\n\t\t$produto17 is not null or\n\t\t$produto18 is not null or\n\t\t$produto19 is not null or\n\t\t$produto20 is not null or\n\t\t$produto21 is not null or\n\t\t$produto22 is not null or\n\t\t$produto23 is not null or\n\t\t$produto24 is not null or\n\t\t$produto25 is not null or\n\t\t$produto26 is not null or\n\t\t$produto27 is not null or\n\t\t$produto28 is not null or\n\t\t$produto29 is not null or\n\t\t$produto30 is not null \n\t) then grid in (\n\t\tcoalesce($produto1, 0),\n\t\tcoalesce($produto2, 0),\n\t\tcoalesce($produto3, 0),\n\t\tcoalesce($produto4, 0),\n\t\tcoalesce($produto5, 0),\n\t\tcoalesce($produto6, 0),\n\t\tcoalesce($produto7, 0),\n\t\tcoalesce($produto8, 0),\n\t\tcoalesce($produto9, 0),\n\t\tcoalesce($produto10, 0),\n\t\tcoalesce($produto11, 0),\n\t\tcoalesce($produto12, 0),\n\t\tcoalesce($produto13, 0),\n\t\tcoalesce($produto14, 0),\n\t\tcoalesce($produto15, 0),\n\t\tcoalesce($produto16, 0),\n\t\tcoalesce($produto17, 0),\n\t\tcoalesce($produto18, 0),\n\t\tcoalesce($produto19, 0),\n\t\tcoalesce($produto20, 0),\n\t\tcoalesce($produto21, 0),\n\t\tcoalesce($produto22, 0),\n\t\tcoalesce($produto23, 0),\n\t\tcoalesce($produto24, 0),\n\t\tcoalesce($produto25, 0),\n\t\tcoalesce($produto26, 0),\n\t\tcoalesce($produto27, 0),\n\t\tcoalesce($produto28, 0),\n\t\tcoalesce($produto29, 0),\n\t\tcoalesce($produto30, 0)\n\t) else true end )\n\n" font_size="medium" id="48d8f4caca47b99f784d9658dbe1cab2" ordem="" paper_orientation="1" titulo="PIMACO-SL61081"><etiqueta nome="PIMACO-SL61081"><impressao>I</impressao><papel>0</papel><tamanho_papel>21.0;29.7</tamanho_papel><margem_papel>1.0;1.0</margem_papel><orientacao>R</orientacao><borda>1</borda><inverte_impressao_etiqueta>0</inverte_impressao_etiqueta><tamanho_quebra>0</tamanho_quebra><tamanho_etiqueta>9.0;3.25</tamanho_etiqueta><margem_etiqueta>0.0;0.25</margem_etiqueta><espaco_etiqueta>0.5;0.5</espaco_etiqueta><numero_etiqueta>2;8</numero_etiqueta><layout fonte_nome="Helvetica" fonte_tamanho="12.0"><campo alinhar="centro" chave="nome" fonte_tamanho="12.5" />
+<campo alinhar="centro" chave="preco_unit" fonte_tamanho="25" formato="valor" />
+<rotulo fonte_tamanho="5" texto="" />
+<cod_barra altura="1" chave="codigo_barra" largura="4.0" quebra="nao" tipo="ean13" />
+<campo alinhar="direita" chave="codigo_barra" fonte_tamanho="10" /></layout></etiqueta></layout></relatorio>

@@ -1,0 +1,5 @@
+Caso TRACEBACK no as_sync:
+
+VER SE TÁ NO SUDO ANTES DE TUDO
+
+'service postgresql restart' = esse comando tem que perguntar antes de dar.

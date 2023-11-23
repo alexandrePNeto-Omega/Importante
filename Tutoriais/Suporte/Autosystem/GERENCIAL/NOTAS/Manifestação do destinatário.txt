@@ -1,0 +1,15 @@
+Manifestação do destinatário
+
+ROTINA: Financeiro > Fiscal > Manifestação de destinatário.
+
+0.5º Dentro da Rotina, identifique quando foi a última nota, para trabalha com referência sobre ela e verificar se as demais subsequentes vão aparecer.
+
+1º Verificar se a manifestação tá na matriz ou filial (PERGUNTAR SE DA PARA TIRAR DA MATRIZ)
+	- Configurações > Módulos > NF-e
+		> Opções 
+			> Diversas: Desce até aparecer a flag "processar as NF-e na matriz....", se tiver marcado, tire.
+
+2º Verificar se o processador de lotes está ativo
+	Gerenciador.exe > Serviços > Vê se tá verde ele, caso contrário basta ligar ele, ou caso ele esteja verde, reinicie ele (tempo de espera 5s), e pessa para fazer um teste, ou verifique você mesmo na ROTINA antes de pedir.
+
+3º Caso não aparece no teste, voltou em contato com o cliente depois de exatamente uma hora para verificar se caiu novamente, e monitorar isso em até dois dias, caso contrário entrar em contato novamente.

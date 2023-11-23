@@ -1,0 +1,8 @@
+set pguser=postgres
+set pgdatabase=nome_da_base
+
+Entra na base com o psql
+
+psql nome_da_base < arquivo_dump.sql
+
+psql -h host_name -p port_number database_name < database.sql

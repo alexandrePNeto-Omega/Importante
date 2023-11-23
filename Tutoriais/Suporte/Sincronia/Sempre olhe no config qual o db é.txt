@@ -1,0 +1,5 @@
+Sempre olhe no config qual o db é
+
+as_config --console
+
+o que é principal é sempre só o "db"

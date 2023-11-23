@@ -1,0 +1,22 @@
+select 
+upper(t.bandeira) bandeira_tef, 
+t.ts_transacao as data, 
+m.nome as modulo, 
+t.operadora_nome, 
+o.nome as operadora,
+t.operadora_bandeira,
+t.operacao,
+tt.nome as transacao, 
+t.operadora as operadora_id, 
+t.nr_cupom,  
+t.nsu, 
+t.nsu_host, 
+t.status, 
+coalesce(motivo_movto_nome_f(mt.motivo::bigint), 
+motivo_movto_nome_f(t.movto::bigint)) as motivo_movto, 
+coalesce(t.valor, 0) as valor, 
+(CASE WHEN (select length(array_to_string(array_agg(bandeira), ', ')) 
+from motivo_empresa_tef met 
+
+where met.motivo=mt.motivo and met.operadora=o.nome::text and met.modulo=t.modulo and met.empresa=c.empresa)>0THEN (CASE WHEN (SELECT COUNT(bandeira) FROM motivo_empresa_tef met WHERE met.motivo = mt.motivo AND met.operadora = o.nome::TEXT AND met.modulo = t.modulo AND met.empresa = c.empresa)>1 THEN (SELECT bandeira FROM motivo_empresa_tef met WHERE met.motivo = mt.motivo AND met.operadora = o.nome::TEXT AND met.modulo = t.modulo AND met.empresa = c.empresa ORDER BY bandeira LIMIT 1) ||'+' ELSE (SELECT bandeira FROM motivo_empresa_tef met WHERE met.motivo = mt.motivo AND met.operadora = o.nome::TEXT AND met.modulo = t.modulo AND met.empresa = c.empresa) END)  ELSE 'NAO ENCONTRADO' END) as bandeira, e.codigo as empresa_codigo, (CASE WHEN length(e.nome_reduzido)>0 THEN e.nome_reduzido else e.nome END ) as empresa_nome from tef_transacao t left join movto mt on (t.movto=mt.grid) left join motivo_movto mtm on (mt.motivo=mtm.grid) join tef_operadora o on (t.operadora=o.codigo) join tef_modulo m on (t.modulo=m.codigo) left join tef_tipo_transacao tt on (t.transacao=tt.codigo::text and t.modulo=tt.modulo) left join caixa c on (t.caixa=c.grid) left join empresa e on (e.grid = c.empresa) where true and c.empresa = 963344 and t.ts_transacao::date >= '2023-07-01 00:00:00' and t.ts_transacao::date <= '2023-07-25 00:00:00' and (mtm.grid = 10032111::int8 or t.movto = 10032111::int8) and t.status = 'A' order by  data;
+

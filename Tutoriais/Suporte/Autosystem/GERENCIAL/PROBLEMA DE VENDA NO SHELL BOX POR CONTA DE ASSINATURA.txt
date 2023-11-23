@@ -1,0 +1,13 @@
+PROBLEMA DE VENDA NO SHELL BOX
+
+cadastro>motivo de movimentação> coloca o código.
+
+- pesquise Shell Box
+	> vejta todas as formas de pagamento:
+		- Cartão
+		- Shell
+- Vá em ECF/TEf
+	- deixe tudo em branco 
+	- e na aba layout, tire tudo
+
+

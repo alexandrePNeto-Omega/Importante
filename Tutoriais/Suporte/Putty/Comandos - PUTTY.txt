@@ -1,0 +1,246 @@
+Comandos do PUTTY
+sudo su
+senha:
+service postgresql restart ( reiniciar o banco de dados)
+--------------------------------------------
+senha de acesso do putty
+login: omega
+senha: O12mqwe!@gQWA
+----------------------------------------------
+acesso FileZilla
+Host: 191.101.235.51
+Usuario: integracao
+Senha: 0m3g4l1nx (pode ser que tenha @ depois do X)
+porta: 21
+
+--------------------------------------------
+service logmein-hamachi restart (reiniciar o hamachi)
+hamachi login
+--------------------------------------------
+as_update(atualizar banco de dados)
+192.168.25.230
+
+ifconfig (para encontrar o IP da maquina)
+--------------------------------------------
+as_sync (para sincronizar)
+service cron stop (parar a sincronia)
+service cron start (iniciar a sincronia)
+service cron status (ver o status da sincronia)
+as_manutencao --renovar-chave versao2 (colocar cnpj sem pontos até a barra)
+su - postgres psql (mais o nome do banco de dados)
+
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nfe') and mode like '%ExclusiveLock';
+
+--------------------------------------------
+
+******Caso o select no banco via PUTTY ficar embaralhado jogar o comando abaixo**********
+\x
+****************************************************************************************
+hamachi do-join (para adicionar o servidor no hamachi) 448-436-071
+
+as_manutencao --renovar-chave versao2 (colocar cnpj sem pontos até a barra)
+
+ps -aux | grep sync/__init__.pyc (caso a sincronia esteja parada)
+
+delete from usuario_pid where modulo='sync';
+
+
+psql -c "select pg_reload_conf();"
+
+
+as_spartpos start (Comando para dar Start na SmartPOS)
+
+
+
+date --set (colocar horario com os segundos)
+date -s mm/dd/yy ( Colocar data)
+
+
+
+select * from config where chave='caixa_logout_fechar_turno' order by empresa;
+
+passwd contorno ( para alterar a senha do usuário servidor)
+
+
+CP (nome no arquivo) (nome que colocar o Bkp)
+
+
+
+
+select * from tef_transacao where ts_transacao='2022-02-01 03:01:46'; 
+
+
+select * from tef_transacao where ts_transacao ='2022-06-01 18:02:36' and='valor da transação';
+
+select * from tef_transacao where operadora='131';
+
+update tef_transacao set operadora_nome='ELO BENEFICIO' where operadora_bandeira='ELO BENEFICIO' and operadora='131';
+
+
+psql -c "select pg_reload_conf();" (reiniciar pg_hba sem reiniciar o banco) 
+
+
+select * from usuario_pid;
+
+
+as_config --console (para editar e configurar o config_local no servidor)
+
+
+vi crontab (para ver a sincronia de loja ou outro banco de dados)
+
+
+gum 
+
+gunzip x as_install_3.3.1.sh.gz (descompacta o arquivo instalador)
+chmod +x as_install_3.3.1.sh
+./as_install_3.3.1.0_2021-09-10T11-15-40.sh
+
+as_sync --db-profile=LOJA
+
+
+**********************usando o unrar**************************************************
+para compactar arquivo: rar a (nome do arquivo).rar (nome da pasta que quer compactar)
+para descompactar: unrar x site-packages (descompactar arquivo)
+*****************************************************************
+
+cp autosystem.db autosystem.db_old ( comando para fazer bkp)
+
+
+
+Dentro do ftp para importar: put (nome do arquivo compactado)
+
+para exportar: get (nome do arquivo compactado)
+
+
+
+update pgd_hosts set flowlimit='500000'; ( para aumentar ou diminuir o flowlimit)
+
+file /bin/bash | cut -d' ' -f3 (para ver se o servidor é 32 ou 64 bits)
+
+telnet 10.1.7.30 10001 (telnet espaço ip espaço e a porta do medidor)
+
+grep CRON /var/log/syslog (puxando o log do crontab)
+
+----------------------------------------------------------------
+Caso apresentar lentidão em relatório, verificar no banco de dados com o comando:
+
+**Indices**
+\d lancto
+\d produto
+\d pessoa
+
+**Olhar o fonte da view**
+venda_pgto_view
+
+gunzip (Quando o arquivo do linux tiver em .gz)
+
+--------------------------------------
+Comandos para impressão
+
+echo "nome" > lp0 (Para imprimir)
+lpstat -a (para verificar as impressoras conectadas)
+lpstat -d (para ver qual a impressora padrão)
+sudo dpkg -l (todos os programas e drivers instalados no Linux)
+apt-get purge _______ (nome do arquivo para desinstalar)
+
+
+update atualizacao_fiscal set ts='2022-06-30 00:01:00' where tipo=0;
+
+C:\autosystem\config_local.exe --exchange_db
+
+less /etc/group (para ver os usuarios no servidor)
+
+lsblk (verificar se é HD"Codigo 1" ou SSD"Codigo 0")
+
+
+
+************adicionar/listar/excluir variaveis LINUX***************
+export ASLOGLEVEL=10 (export adiciona a variavel)
+printenv | less (lista as variaveis)
+unset VAR (é o unset que exclui a variavel)
+
+
+update atualizacao_fiscal set serial=0, ts=current_date-1; (Atualizar tabela ibpt)
+update pgd_hosts set ftphost='191.101.235.51' where ftphost='193.46.199.122'; (IP novo ftp)
+
+
+passwd omega Rm)6asl=)01k@t*nVaoy    Trapezio
+
+O12mqwe!@gQWA
+
+/etc/init.d/postgresql restart (reiniciar o postgres)
+
+***********Script sincronia***********************
+./mata_sincronia.sh
+
+Se dizer que nao existe o arquivo:
+
+wget ftp://integracao:0m3g4l1nx@gestaosoft.com/files/mata_sincronia.sh (para matar sincronias)
+
+chmod +x mata_sincronia.sh
+
+./mata_sincronia.sh
+--------------------------------------
+ANTES DE COPIAR E COLAR NO TERMINAL
+
+Procedimento para rodar na FILIAL:
+cd /home/omega
+mkdir script
+cd script
+wget ftp://integracao:0m3g4l1nx@gestaosoft.com/files/ajusta_sincronia_filial.sh
+chmod +x ajusta_sincronia_filial.sh
+
+Colocar no crontab: 
+*/5 * * * * root /home/omega/script/ajusta_sincronia_filial.sh
+(deixa alinhado os * com os outros comandos)
+
+--------------------------------------------------------------------------------------------------
+
+Procedimento para rodar na MATRIZ:
+
+cd /home/omega
+mkdir script
+cd script
+wget ftp://integracao:0m3g4l1nx@gestaosoft.com/files/ajusta_sincronia_matriz.sh
+chmod +x ajusta_sincronia_matriz.sh
+
+Colocar no crontab: 
+*/5 * * * * root /home/omega/script/ajusta_sincronia_matriz.sh
+(deixa alinhado os * com os outros comandos)
+
+
+
+
+
+**************LOG ZABBIX*************************
+tail -f /var/log/zabbix/zabbix_agentd.log
+
+
+/etc/init.d/zabbix-agent restart
+
+createuser zabbix (criar um usuario em cada banco de dados)
+
+
+*************SMARTPOS*********************
+pip2.7 install websocket==0.2.1 websocket-client==0.59.0 (PATH)
+
+pip install --ignore-installed websocket-client (caso o path acima nao der certo)
+
+psql -h localhost -U postgres -d santarita -p 5687
+
+
+ssh -p 2039 783d0786721f.sn.mynetname.net
+
+as_manutencao --checkdb (verificar versão atual autosystem)
+
+lsb_release -a (versão do ubuntu)
+
+
+psql -c "select pg_reload_conf();"
+
+
+select pg_terminate_backend(pid) from usuario_pid where modulo like '%smart%';
+
+*****************USUARIOS***********************
+last (lista usuarios que acessaram ao servidor)

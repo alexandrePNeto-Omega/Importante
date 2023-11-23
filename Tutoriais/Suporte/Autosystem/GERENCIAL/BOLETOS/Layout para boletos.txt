@@ -1,0 +1,65 @@
+Layout de boleto:
+	> Requisitos:
+		- Conta corrente + digito;
+		- Banco (número dele);
+		- Agência + digito;
+		- N° Cedente.
+
+Rotina para o cadastro do portador do Boleto:
+	> Cadastro > Tabelas > Financeiro > Portadores
+
+	INFORMAÇÕES GERAIS:
+	Padrão do nome: codº posto - BOLETO - BANCO CC XXXyyy - NOME DO POSTO
+	Flag "Portador Bancário: Marcada
+	Conta corrente: A que foi direcionada ao portador no ticket
+	Modalidade: Boleto bancário
+	Layout padrão: Padrão 3 vias
+	
+	Contrato & Concenio: Vão receber o nº cedente
+	Carteira: 1, Variação: 2, Código range: 3, Modalidade carteira: 4
+	Emite boleto: Empresa, Tipo cobrança: Registrada.
+
+	ARQUIVO:
+	Flag "Cobrança integrada": Marcado
+	Diretório remessa:  	C:\BOLETO\NOME_POSTO\REMESSA
+	Diretório retorno:	C:\BOLETO\NOME_POSTO\RETORNO
+	Próx. nr. remessa: 1, Próx. nosso nº: nada
+	Faixa nosso nº: 1, até: 99999999999
+
+	INFORMAÇÕES ESPECÍFICAS
+	Byte de Geração: 2
+
+	CONFIGURAÇÃO DE LAYOUT:
+	O que tiver nos de mais cadastros empresa
+
+	OPÇÕES:
+	Beneficiário: Colocar a empresa atual
+	Cedente: Razão social
+
+	EMPRESA:
+	Nada
+
+Rotina para gerar os boletos de exemplo:
+	> Financeiro > Contas a Receber > Gerenciamento de Boletos
+	
+	Portador: Colocar o portador criado a cima
+	Cliente: Apenas um cliente de exemplo, pode ser outro posto até
+
+	> Clicar e NOVO:
+		Portador: O mesmo criado
+		Cliente: O mesmo selecionado anteriormento
+		Vencimento: Para daqui 10 dias
+		Número de doc: 1 e conforme for gerando os teste acrescente +1 a este número ficando por exemplo no próximo 2
+		Valor: Não faça acima de R$100
+		> Clique em Salvar.
+
+Agora vamos registrar o boleto e gerar o arquivo remessa:
+	Financeiro > Contas a Receber > Impressão de boletos
+		- Selecione o portador:
+			 Selecione seus boletos, agora clique em REGISTRAR BOLETO, de sim para tudo, menos para enviar por email
+
+	*LEMBRANDO*: Precisa de um leitor de PDF na máquina para gerar a impressão
+
+Outra forma de gerar a remssa:
+	Financeiro > Contas a Receber > Remessa de Cobraça
+		Selcione o portador: vai aparacert todos os boletos que devem ser gerado remessa.

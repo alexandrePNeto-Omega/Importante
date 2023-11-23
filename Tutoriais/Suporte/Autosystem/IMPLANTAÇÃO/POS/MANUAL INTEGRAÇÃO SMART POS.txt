@@ -1,0 +1,22 @@
+MANUAL INTEGRAÇÃO SMART POS
+- Cadastre a marca da maquininha
+	cadastros > tabelas >  gerais > marcas
+- Cadastre a Smart POS
+ 	cadastros > tabelas > equipamentos > POS
+
+- Cadastre o dispositivo do TEF
+	configuração > modulos > tef > integração POS > Smart POS tef
+
+	* estação: é sua maquina.
+	* dispositivos: pegue as informações na maquininha.
+	* a porta começa depois de 9000 ex:. 9003 (libere a porta no firewall e verifique se tem antivirus também)
+
+- Ajustando o PDV:
+	configuração > parâmentros > caixas ponto de venda >  selecione o PDV
+		* dentro do PDV:
+			> configurações > abertura e fechamento:
+				+ deixe como turno livre;
+				+ fechamento do dia 23:59
+
+			> POS > SmartPOS TEF:
+				+ Habilite tudo e coloque um responsável.

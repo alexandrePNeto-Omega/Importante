@@ -1,0 +1,16 @@
+ordem de deposito
+
+entrada nos contas a pagar e saida do pdv
+
+
+informações:
+	DEPOSITO BANC[ARIO
+
+
+documentos testados (cpf):
+612.669.980-71 = 500 	-> apagado	= true
+29803436090 = 550	-> apagado	= true
+
+documentos testados (cnpj):
+96.513.420/0001-40 	-> apagado	= true
+16054442000150 		-> apagado	= true

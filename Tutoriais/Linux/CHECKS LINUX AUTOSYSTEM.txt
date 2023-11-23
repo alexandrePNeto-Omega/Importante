@@ -1,0 +1,189 @@
+Instalar ssh
+apt-get install ssh
+
+----------------------------------------------
+Instalar postgres
+	> Criar o banco autosystem
+	> Jogar dump inicial
+
+Da o comando:  timedatectl set-timezone Etc/GMT+3
+
+Editar o arquivo sources.list: Adicionar no final do arquivo /etc/apt/sources.list a seguinte linha:
+deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main  (usado para baixar a versão 13)
+deb http://security.ubuntu.com/ubuntu bionic-security main
+
+VERIFICAR SE MÁQUINA É (FOCAL / BIONIC / JEMMY)
+lsb_release -a
+
+E MUDA A LINHA QUE ADICIONOU NO ARQUIVO, CONFORME O CODNAME DA MÁQUINA
+
+Importar a chave do repositório: Importar a chave necessária para o download do PostgreSQL 9.6:
+sudo wget -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+ 
+Atualizar o apt-get: Para atualizar a lista local de pacotes com as últimas alterações feitas nos repositórios, digite o seguinte:
+sudo apt-get update
+
+Instalar o PostgreSQL 9.6: Instalar o PostgreSQL 9.6 através do apt-get:
+sudo apt-get install postgresql-13 libpq-dev
+
+No final da instalação, o banco de dados irá executar o serviço automaticamente. Pode ser
+confirmado se o PostgreSQL está executando com o comando:
+sudo service postgresql status
+
+Caso nao estiver online executar:
+sudo service postgresql restart
+
+Fixar a versão: Para que o PostgreSQL se mantenha na versão 9.6 ou 13 é necessário criar um
+arquivo novo no caminho /etc/apt/preferences.d/ com o nome postgres.pref:
+sudo vi /etc/apt/preferences.d/postgres.pref
+
+Em seguida adicionar ao arquivo as seguintes linhas:
+Package: postgresql
+Pin: version 13*
+Pin-Priority: 1001
+
+Edita o arquivo:
+vi /etc/postgresql/13/main/postgresql.conf
+
+Altera as linhas:
+#bytea_output = 'hex' # hex, escape
+#default_transaction_isolation = 'read committed'
+#standard_conforming_strings = on
+shared_buffers = 128MB
+ssl = on
+#listen_addresses = 'localhost'
+port = 5432
+max_connections = 100
+
+Para:
+bytea_output = 'escape'
+default_transaction_isolation = 'read committed'
+standard_conforming_strings = off
+shared_buffers = 1000MB (se tiver pelo menos 8GB de ram pode colocar 2000 nessa linha)
+ssl = off
+listen_addresses = '*'
+port = 5687
+max_connections = 500
+
+
+(Obs, não esqueça de remover o #)
+
+service postgresql restart
+
+Por final para executar o postgresql automaticamente ao reiniciar a maquina:
+cd /etc/init.d
+sudo update-rc.d postgresql enable
+
+
+Se ocorrer o erro ao rodar o comando acima:
+root@Mahle09:/home/omega/script# cd /etc/init.d
+root@Mahle09:/etc/init.d# sudo update-rc.d postgresql enable
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = "pt_BR:pt:en",
+LC_ALL = (unset),
+LC_PAPER = "pt_BR",
+LC_ADDRESS = "pt_BR",
+LC_MONETARY = "pt_BR",
+LC_NUMERIC = "pt_BR",
+LC_TELEPHONE = "pt_BR",
+LC_IDENTIFICATION = "pt_BR",
+LC_MEASUREMENT = "pt_BR",
+LC_TIME = "pt_BR",
+LC_NAME = "pt_BR",
+LANG = "pt_BR.UTF-8"
+are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+
+Executa os comandos:
+apt-get install ntp
+sudo locale-gen --no-purge --lang pt_BR
+sudo pg_createcluster 9.6 main --start
+
+Ai roda novamente:
+update-rc.d postgresql enable
+
+Configurar o as_config já com a senha do banco
+
+---------------------------------------------------------
+
+Instalar autosystem
+	> Colocar a chave e configurar no crontab
+
+Acessar o FTP da linx:
+
+Pasta autosystem/MigracaoPython22 
+
+wget ftp://integracao:0m3g4l1nx@gestaosoft.com/files/as_install_3.3.1.98.sh.gz
+
+Quando terminar de baixar 
+
+apt-get install unzip
+
+Descompacta o arquivo:
+unzip as_install_3.3.1.98.sh.gz ou
+gunzip x as_install_3.3.1.98.sh.gz
+
+Dar permissao de executavel para o arquivo:
+chmod +x as_install_3.3.1.98.sh
+
+Executa o instalador:
+./as_install_3.3.1.98.sh
+
+
+chmod 777 /usr/local/bin/*
+
+Recria as chaves de conexão com BD do config local
+
+Para acessar config local:
+
+as_config --console
+
+rm /etc/autosystem.key
+as_manutencao --renovar-chave -versao2
+
+executa as_update
+
+----------------------------------------------
+#		VERIFICA O HAMACHI
+*/5 *   * * *   root    /home/omega/scripts/serviceverifica.sh
+#		SINCRONIA
+#*/5 *   * * *   root    /usr/local/autosystem3/bin/as_sync
+#		RENOVA CHAVE
+10 10   5 * *   root    as_manutencao --renovar-chave -versao2 senha
+10 10   15 * *  root    as_manutencao --renovar-chave -versao2 senha
+10 10   25 * *  root    as_manutencao --renovar-chave -versao2 senha
+
+----------------------------------------------
+
+Instalar hamachi
+
+cd /home/
+sudo mkdir Instalacao
+cd Instalacao
+ubuntu# sudo wget ftp://integracao:0m3g4l1nx@gestaosoft.com/files/filial/logmein-hamachi_2.1.0.198-1_amd64.deb
+
+Comando para instalar o pacote do hamachi que foi baixado:
+ubuntu# sudo dpkg -i logmein-hamachi_2.1.0.198-1_amd64.deb
+
+Caso apresentar algum erro executar:
+ubuntu# sudo apt-get -f install
+
+Em seguida executa novamente:
+ubuntu# sudo dpkg -i logmein-hamachi_2.1.0.198-1_amd64.deb 
+
+Depois fazer login no hamachi:
+ubuntu# sudo hamachi login
+
+Alterar o nome da maquina:
+
+ubunti# sudo hamachi set-nick nome_da_maquina (trocar nome_da_maquina pelo nome servidor_"nome do posto")
+
+Depois fará o login na rede com o comando a baixo (TROCANDO id_da_rede PELO ID DA REDE QUE APARECE LÁ NO LOGMEIN NO GERENCIAMENTO DE REDES)
+
+ubuntu# sudo hamachi do-join id_da_rede 
+senha: autosystem_linx
+
+Irá solicitar a senha da rede conforme está configurado o padrão lá no logmein no gerenciamento de redes
+Apos digitar a senha deve-se realizar o aceite dentro da rede lá no logmein

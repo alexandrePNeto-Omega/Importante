@@ -1,0 +1,80 @@
+
+
+su - postgres
+
+createuser autosystem
+createuser distro
+createdb -E SQL_ASCII -T template0 autosystem postgres
+psql autosystem
+
+
+alter user distro with password 'SENHA';
+alter user postgres with password 'SENHA';
+alter user autosystem with password 'SENHA';
+\q
+
+cd /home/omega/diretório de descompactação
+psql -f nome_do_dump.sql autosystem postgres 
+
+as_config --console
+
+db:host = '127.0.0.1'
+db:port = '5687'
+db:database = 'autosystem'
+db:user = 'postgres'
+db:password = 'SENHA'
+db:superuser = 'postgres'
+db:superpass = 'SENHA'
+
+vi /etc/postgresql/13/main/postgresql.conf
+editar a porta para a atual caso seja diferente
+
+as_manutencao --renovar-chave -versao2
+nome: servidor
+CNPJ: ...
+SENHA: ...
+
+
+
+
+su - postgres
+psql autosystem
+select * from pgd_hosts;
+
+- Olhe os campos: hostname, ftphost (é um ip: ex 25.47.56.250), ftpuser, ftppassword, ftpdir
+
+Agora entre na base da matriz
+configurações>muilti empresa> configurar servidores
+	novo servidor> os campos daqui são os campos lá da base
+		apelido = hostname
+			aba FTP
+				> servidor = ftphost
+				> usuário = ftpuser
+				> senha = ftppassword
+				> diretório = ftpdir
+			salvar
+			
+			
+
+Begin;
+update pgd_hosts set flowlimit = '500000' where sid in (29, 30);
+		
+as_sync
+
+vi /etc/crontab
+*/5 *   * * *   root    as_sync
+
+10 10   5 * *   root    as_manutencao --renovar-chave -versao2 27933025 = esses números são a chave 
+10 10   15 * *  root    as_manutencao --renovar-chave -versao2 27933025 
+10 10   25 * *  root    as_manutencao --renovar-chave -versao2 27933025 
+
+service cron restart 
+
+
+
+
+
+
+
+29- nego
+30- mariuca

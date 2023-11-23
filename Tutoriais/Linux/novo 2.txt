@@ -1,0 +1,2 @@
+
+insert into exc_ipp_config (empresa, codigo_pv, codigo_pista, codigo_ampm) values (grid_da_empresa,'00001125', '01365552', '01388856');

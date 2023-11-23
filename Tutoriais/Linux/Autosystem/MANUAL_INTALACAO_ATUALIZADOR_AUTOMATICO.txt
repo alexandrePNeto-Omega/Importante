@@ -1,0 +1,113 @@
+Bem-vindo(a) manual completo de instalação do atualizador automático!
+
+- CONECTE VIA PUTTY, COM O IP HAMACHI DO CLIENTE.
+
+- FAÇA O LOGIN, E COMECE O PROCESSOS A SEGUIR:
+
+- ENTRE NO SUPER USUÁRIO:
+sudo su
+
+- INSTALANDO O VSFTP:
+apt-get install vsftpd
+
+- INSTALANDO O PACOTES DO PYTHON:
+pip install pytz
+pip install requests
+
+- APAGUE TODO O CONTEÚDO DE (/etc/vsftpd.conf):
+> USE O 'VI' PARA EDITAR:
+vi /etc/vsftpd.conf
+
+- COLOCAR: 
+	> Dicas:
+		* Para deletar tudo: aperte 'ESC' e depois "dd";
+		* Para inserir: aperte 'ESC' e depois "i";
+		* Para sair do modo edição: Aperte "ESC";
+		* Para salvar e sair: ":wq".
+
+APAGA TUDO
+
+listen=NO
+listen_ipv6=YES
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+#local_umask=022
+dirmessage_enable=YES
+use_localtime=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+chroot_local_user=YES
+secure_chroot_dir=/var/run/vsftpd/empty
+pam_service_name=vsftpd
+rsa_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+ssl_enable=NO
+user_sub_token=$USER
+local_root=/home/$USER/ftp
+pasv_min_port=40000
+pasv_max_port=50000
+userlist_enable=YES
+userlist_file=/etc/vsftpd.userlist
+userlist_deny=NO
+#force_dot_files=YES
+allow_writeable_chroot=YES
+seccomp_sandbox=NO
+max_per_ip=5
+idle_session_timeout=3600
+data_connection_timeout=3600
+
+- PARA VER SE EDITOU TUDO CERTO:
+cat /etc/vsftpd.conf
+
+- REINICIE O vsftp:
+sudo systemctl restart vsftpd
+
+- CRIAÇÃO DO USUÁRIO FTP:
+sudo adduser atualizacao
+> (obs: colocar uma senha forte ex: Wx07lmcOY.Z886*_PmX53!)
+
+H7&$(#hfhdjk)()...3nfkdUJK#U!_
+
+sudo mkdir /home/atualizacao/ftp
+sudo mkdir /home/atualizacao/ftp/files
+sudo chown nobody:nogroup /home/atualizacao/ftp
+sudo chmod a-w /home/atualizacao/ftp
+sudo chown atualizacao:atualizacao /home/atualizacao/ftp/files
+echo "atualizacao" | sudo tee -a /etc/vsftpd.userlist
+sudo systemctl restart vsftpd
+
+
+-- Atualizador automático 
+
+- MUDANDO O DIRETÓRIO PARA BAIXAR NO LOCAL CORRETO:
+cd /usr/local/bin/
+ls
+
+- PEGANDO OS ARQUIVOS NO GESTAOSOFT:
+sudo wget -O atualizador_ftp ftp://integracao:0m3g4l1nx@gestaosoft.com/files/atualizador_ftp
+sudo wget -O atualizador_ftp.pyc ftp://integracao:0m3g4l1nx@gestaosoft.com/files/atualizador_ftp.pyc
+ls (para ver se foi baixado)
+
+- DANDO A PERMISSÃO PARA OS ARQUIVOS:
+chmod a+rwx /usr/local/bin/atualizador_ftp
+chmod a+rwx /usr/local/bin/atualizador_ftp.pyc
+ls (para ver se deu certo)
+
+- EM SEGUIDA: 
+cd
+
+- USE O SCREEN PARA O COMANDO ABAIXO (prevenir imprevistos):
+
+screen
+
+atualizador_ftp
+
+as_update
+
+- ESPERE ACABAR.
+
+cat /home/atualizacao/ftp/files/versao.txt
+
+
+files/atualizacao_auto

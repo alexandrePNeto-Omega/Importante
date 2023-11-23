@@ -1,0 +1,584 @@
+-- Table: public.exchange_scanntech_config_flow
+
+-- DROP TABLE IF EXISTS public.exchange_scanntech_config_flow;
+
+CREATE TABLE IF NOT EXISTS public.exchange_scanntech_config_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    ativo boolean,
+    ts_ativacao timestamp(0) without time zone,
+    scanntech_id bigint
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exchange_scanntech_config_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_config_flow TO postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_config_flow TO PUBLIC;
+-- Index: exchange_scanntech_config_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_config_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_config_flow_ix1
+    ON public.exchange_scanntech_config_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exchange_scanntech_config_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_config_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_config_flow_ix2
+    ON public.exchange_scanntech_config_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+	
+-------------------------------------------
+
+-- Table: public.exchange_scanntech_empresa_flow
+
+-- DROP TABLE IF EXISTS public.exchange_scanntech_empresa_flow;
+
+CREATE TABLE IF NOT EXISTS public.exchange_scanntech_empresa_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    empresa bigint,
+    local integer
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exchange_scanntech_empresa_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_empresa_flow TO postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_empresa_flow TO PUBLIC;
+-- Index: exchange_scanntech_empresa_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_empresa_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_empresa_flow_ix1
+    ON public.exchange_scanntech_empresa_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exchange_scanntech_empresa_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_empresa_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_empresa_flow_ix2
+    ON public.exchange_scanntech_empresa_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+----------------
+
+-- Table: public.exchange_scanntech_motivo_movto_flow
+
+-- DROP TABLE IF EXISTS public.exchange_scanntech_motivo_movto_flow;
+
+CREATE TABLE IF NOT EXISTS public.exchange_scanntech_motivo_movto_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    motivo bigint,
+    tipo integer
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exchange_scanntech_motivo_movto_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_motivo_movto_flow TO postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_motivo_movto_flow TO PUBLIC;
+-- Index: exchange_scanntech_motivo_movto_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_motivo_movto_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_motivo_movto_flow_ix1
+    ON public.exchange_scanntech_motivo_movto_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exchange_scanntech_motivo_movto_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_motivo_movto_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_motivo_movto_flow_ix2
+    ON public.exchange_scanntech_motivo_movto_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+--------
+
+-- Table: public.exchange_scanntech_sync_fechamento_flow
+
+-- DROP TABLE IF EXISTS public.exchange_scanntech_sync_fechamento_flow;
+
+CREATE TABLE IF NOT EXISTS public.exchange_scanntech_sync_fechamento_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    ts timestamp without time zone,
+    empresa bigint,
+    caixa text COLLATE pg_catalog."default",
+    data date,
+    status integer,
+    message text COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exchange_scanntech_sync_fechamento_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_sync_fechamento_flow TO postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_sync_fechamento_flow TO PUBLIC;
+-- Index: exchange_scanntech_sync_fechamento_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_sync_fechamento_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_sync_fechamento_flow_ix1
+    ON public.exchange_scanntech_sync_fechamento_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exchange_scanntech_sync_fechamento_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_sync_fechamento_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_sync_fechamento_flow_ix2
+    ON public.exchange_scanntech_sync_fechamento_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+--------
+
+-- Table: public.exchange_scanntech_sync_venda_flow
+
+-- DROP TABLE IF EXISTS public.exchange_scanntech_sync_venda_flow;
+
+CREATE TABLE IF NOT EXISTS public.exchange_scanntech_sync_venda_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    ts timestamp without time zone,
+    mlid bigint,
+    empresa bigint,
+    caixa text COLLATE pg_catalog."default",
+    data date,
+    total double precision,
+    situacao character(1) COLLATE pg_catalog."default",
+    status integer,
+    message text COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exchange_scanntech_sync_venda_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_sync_venda_flow TO postgres;
+
+GRANT ALL ON TABLE public.exchange_scanntech_sync_venda_flow TO PUBLIC;
+-- Index: exchange_scanntech_sync_venda_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_sync_venda_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_sync_venda_flow_ix1
+    ON public.exchange_scanntech_sync_venda_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exchange_scanntech_sync_venda_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exchange_scanntech_sync_venda_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exchange_scanntech_sync_venda_flow_ix2
+    ON public.exchange_scanntech_sync_venda_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+------------
+
+-- Table: public.exchange_sped_e230_flow
+
+-- DROP TABLE IF EXISTS public.exchange_sped_e230_flow;
+
+CREATE TABLE IF NOT EXISTS public.exchange_sped_e230_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    empresa bigint,
+    data date,
+    numero_documento text COLLATE pg_catalog."default",
+    numero_processo text COLLATE pg_catalog."default",
+    indicador_origem_processo text COLLATE pg_catalog."default",
+    descricao text COLLATE pg_catalog."default",
+    descricao_resumido text COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exchange_sped_e230_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exchange_sped_e230_flow TO postgres;
+
+GRANT ALL ON TABLE public.exchange_sped_e230_flow TO PUBLIC;
+-- Index: exchange_sped_e230_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exchange_sped_e230_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exchange_sped_e230_flow_ix1
+    ON public.exchange_sped_e230_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exchange_sped_e230_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exchange_sped_e230_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exchange_sped_e230_flow_ix2
+    ON public.exchange_sped_e230_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+-----------
+
+-- Table: public.exc_mercafacil_carga_inicial_flow
+
+-- DROP TABLE IF EXISTS public.exc_mercafacil_carga_inicial_flow;
+
+CREATE TABLE IF NOT EXISTS public.exc_mercafacil_carga_inicial_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    empresa bigint,
+    operators boolean,
+    products boolean,
+    coupons boolean,
+    data timestamp without time zone,
+    data_ativacao date
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exc_mercafacil_carga_inicial_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_carga_inicial_flow TO postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_carga_inicial_flow TO PUBLIC;
+-- Index: exc_mercafacil_carga_inicial_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_carga_inicial_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_carga_inicial_flow_ix1
+    ON public.exc_mercafacil_carga_inicial_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exc_mercafacil_carga_inicial_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_carga_inicial_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_carga_inicial_flow_ix2
+    ON public.exc_mercafacil_carga_inicial_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+---------------
+
+-- Table: public.exc_mercafacil_config_flow
+
+-- DROP TABLE IF EXISTS public.exc_mercafacil_config_flow;
+
+CREATE TABLE IF NOT EXISTS public.exc_mercafacil_config_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    empresa bigint,
+    ativo boolean,
+    token text COLLATE pg_catalog."default",
+    data_ativacao date,
+    motivo_movto bigint,
+    data_ultima_atualizacao timestamp without time zone,
+    intervalo_sincronia integer
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exc_mercafacil_config_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_config_flow TO postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_config_flow TO PUBLIC;
+-- Index: exc_mercafacil_config_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_config_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_config_flow_ix1
+    ON public.exc_mercafacil_config_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exc_mercafacil_config_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_config_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_config_flow_ix2
+    ON public.exc_mercafacil_config_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+--------
+
+-- Table: public.exc_mercafacil_grupo_produto_flow
+
+-- DROP TABLE IF EXISTS public.exc_mercafacil_grupo_produto_flow;
+
+CREATE TABLE IF NOT EXISTS public.exc_mercafacil_grupo_produto_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    grupo_produto bigint,
+    ativo boolean,
+    empresa bigint
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exc_mercafacil_grupo_produto_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_grupo_produto_flow TO postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_grupo_produto_flow TO PUBLIC;
+-- Index: exc_mercafacil_grupo_produto_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_grupo_produto_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_grupo_produto_flow_ix1
+    ON public.exc_mercafacil_grupo_produto_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exc_mercafacil_grupo_produto_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_grupo_produto_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_grupo_produto_flow_ix2
+    ON public.exc_mercafacil_grupo_produto_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+-------
+
+-- Table: public.exc_mercafacil_transacao_flow
+
+-- DROP TABLE IF EXISTS public.exc_mercafacil_transacao_flow;
+
+CREATE TABLE IF NOT EXISTS public.exc_mercafacil_transacao_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    grid bigint,
+    empresa bigint,
+    mlid bigint,
+    cpf_cliente text COLLATE pg_catalog."default",
+    confirmado boolean,
+    request_id text COLLATE pg_catalog."default",
+    tag text COLLATE pg_catalog."default",
+    pre_apply boolean,
+    response_apply text COLLATE pg_catalog."default",
+    cancelado boolean,
+    finalizacao_enviada boolean,
+    participando boolean,
+    coupon_enviado boolean,
+    sucesso_envio boolean,
+    retorno_envio text COLLATE pg_catalog."default",
+    ts_enviado timestamp without time zone,
+    ts timestamp(0) without time zone,
+    coupon_cancelado boolean,
+    coupon_cancelado_enviado boolean
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.exc_mercafacil_transacao_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_transacao_flow TO postgres;
+
+GRANT ALL ON TABLE public.exc_mercafacil_transacao_flow TO PUBLIC;
+-- Index: exc_mercafacil_transacao_flow_ix1
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_transacao_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_transacao_flow_ix1
+    ON public.exc_mercafacil_transacao_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: exc_mercafacil_transacao_flow_ix2
+
+-- DROP INDEX IF EXISTS public.exc_mercafacil_transacao_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS exc_mercafacil_transacao_flow_ix2
+    ON public.exc_mercafacil_transacao_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;
+	
+---------
+
+-- Table: public.pessoa_agregado_banco_flow
+
+-- DROP TABLE IF EXISTS public.pessoa_agregado_banco_flow;
+
+CREATE TABLE IF NOT EXISTS public.pessoa_agregado_banco_flow
+(
+    pgd_gfid bigint,
+    pgd_username text COLLATE pg_catalog."default",
+    pgd_host text COLLATE pg_catalog."default",
+    pgd_optype text COLLATE pg_catalog."default",
+    pgd_when timestamp(0) without time zone,
+    pgd_rfid bigint,
+    pgd_flow_flag text COLLATE pg_catalog."default",
+    pgd_module text COLLATE pg_catalog."default",
+    pgd_version text COLLATE pg_catalog."default",
+    pessoa_agregado bigint,
+    banco bigint,
+    agencia text COLLATE pg_catalog."default",
+    conta text COLLATE pg_catalog."default",
+    grid bigint,
+    tipo_chave_pix integer,
+    chave_pix text COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.pessoa_agregado_banco_flow
+    OWNER to postgres;
+
+GRANT ALL ON TABLE public.pessoa_agregado_banco_flow TO postgres;
+
+GRANT ALL ON TABLE public.pessoa_agregado_banco_flow TO PUBLIC;
+-- Index: pessoa_agregado_banco_flow_ix1
+
+-- DROP INDEX IF EXISTS public.pessoa_agregado_banco_flow_ix1;
+
+CREATE INDEX IF NOT EXISTS pessoa_agregado_banco_flow_ix1
+    ON public.pessoa_agregado_banco_flow USING btree
+    (pgd_gfid ASC NULLS LAST)
+    TABLESPACE pg_default;
+-- Index: pessoa_agregado_banco_flow_ix2
+
+-- DROP INDEX IF EXISTS public.pessoa_agregado_banco_flow_ix2;
+
+CREATE INDEX IF NOT EXISTS pessoa_agregado_banco_flow_ix2
+    ON public.pessoa_agregado_banco_flow USING btree
+    (grid ASC NULLS LAST)
+    TABLESPACE pg_default;

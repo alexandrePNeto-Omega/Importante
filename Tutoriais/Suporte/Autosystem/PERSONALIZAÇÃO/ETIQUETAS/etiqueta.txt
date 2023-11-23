@@ -1,0 +1,15 @@
+<campo chave="nome" fonte_tamanho="20"/>
+<rotulo alinar="esquerda" quebra="nao" fonte_tamanho="20" texto=""/>
+<campo chave="preco_unit" alinhar="centro" formato="valor" fonte_tamanho="20"/>
+<rotulo fonte_tamanho="10" texto=" "/>
+<cod_barra chave="codigo_barra" largura="3.0" quebra="nao" tipo="ean13" altura="1"/>
+<rotulo quebra="nao" fonte_tamanho="20" texto=""/>
+<rotulo fonte_tamanho="15" texto="GRUPO MAHLE" inicio="2.8"/>
+
+---------------------------------------------------------------------------------------
+Folha A4
+<campo chave="nome" alinhar="centro" fonte_tamanho="12.5"/>
+<campo chave="preco_unit" alinhar="centro" formato="valor" fonte_tamanho="25"/>
+<rotulo fonte_tamanho="5" texto=""/>
+<cod_barra chave="codigo_barra" largura="3.0" quebra="nao" tipo="ean13" altura="1"/>
+<campo chave="codigo_barra" alinhar="direita" fonte_tamanho="15"/>

@@ -1,0 +1,25 @@
+MILVUS PARA MANUAIS.
+
+Baixar PostgreSQL 9.6 64 bits 									
+Porta pode deixar 5432											
+Idioma pode deixar o default											
+Senha: postgres (pois é ambiente de teste)							
+Instalar. No final da instalação pode desmarcar o checkbox starkblue				
+
+
+- Criar um banco de dados chamado autosystem com a codificação SQL_ASCII (não usar UTF8)	
+- Descarregar nesse banco de dados o arquivo dump 							
+- Instalar o executável AutoSystem										
+
+Dentro do C:\autosystem abrir o config_local.exe							
+senha: asconfig007											
+
+Na aba banco de dados, configurar a conexão com o banco de dados que voce criou.
+Abrir o executável main.exe
+Vai pedir chave de ativação.
+Informar CNPJ: 09.121.214/0001-90
+Senha: 09121214
+Nome pode colocar qqr coisa
+
+
+Em Configurações > Parametros > Empresas configurar a empresa

@@ -1,0 +1,65 @@
+﻿#primeiro rodar esse comando passando o nome da tabela que deseja ver se está bloqueada
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='cesta_produto_item') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_ipp_produto_empresa') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='tef_transacao') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='ponto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nota_fiscal') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exchange_sped_0205') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nfe') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nfe_lote') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='boleto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nota_fiscal_pessoa') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_ipp_produto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_ipp_produto_empresa') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_rz_selcon_marca') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='movto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='cheque_lote_map') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_datasul_cliente') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_ipp_produto_empresa') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nfe_lote') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_br_inclusao_cadastro') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='abastecimento_fiscal') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='lancto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='regra_preco') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='produto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='produto_distribuidora') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nota_fiscal') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='boleto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_ipp_produto') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='cheque') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='grid_map') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='exc_postoaki_voucher') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='empresa_fiscal') and mode like '%ExclusiveLock';
+
+select pg_terminate_backend(pid) from pg_locks where relation=(select oid from pg_class where relname='nfe_lote') and mode like '%ExclusiveLock';

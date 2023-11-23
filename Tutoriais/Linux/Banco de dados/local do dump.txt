@@ -1,0 +1,3 @@
+Caminho onde fica o dump que foi tirado no linux
+
+cd /var/lib/postgres

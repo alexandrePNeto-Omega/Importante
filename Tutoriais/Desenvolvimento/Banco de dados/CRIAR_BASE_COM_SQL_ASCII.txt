@@ -1,0 +1,2 @@
+ - CREATE DATABASE nome_da_base TEMPLATE template0 ENCODING 'SQL_ASCII';
+

@@ -1,0 +1,15 @@
+Dump no windowns
+pg_dump -v -U postgres -W -F p nome_da_base > dump_my_base.sql
+
+-U postgres: especifica o usuário para se conectar ao servidor de banco de dados PostgreSQL. Usamos o postgres neste exemplo.
+
+-W: força pg_dump a solicitar a senha antes de conectar ao servidor de banco de dados PostgreSQL. Depois de clicar em Enter, pg_dump será solicitada a senha do usuário postgres.
+
+-F : especifica o formato do arquivo de saída que pode ser um dos seguintes:
+
+c: formato de arquivo de formato personalizado
+d: arquivo em formato de diretório
+t: tar
+p: arquivo de script SQL de texto simples
+
+Neste exemplo, usamos -F t para especificar o arquivo de saída como um arquivo tar.

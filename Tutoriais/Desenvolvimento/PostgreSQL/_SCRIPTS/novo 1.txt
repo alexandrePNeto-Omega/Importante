@@ -1,0 +1,16 @@
+select 
+p.nome,
+sum(l.quantidade) as venda_quantidade
+
+from lancto l 
+
+join produto p on (l.produto=p.grid) 
+join empresa e on (l.empresa=e.grid) 
+
+where (l.data between '2023-03-12' and '2023-03-12') 
+and l.operacao = 'V' and l.empresa=1 
+and p.grupo=192 
+
+group by l.empresa, l.produto, p.grupo, p.subgrupo, p.tipo, p.nome
+
+order by l.empresa, l.produto;

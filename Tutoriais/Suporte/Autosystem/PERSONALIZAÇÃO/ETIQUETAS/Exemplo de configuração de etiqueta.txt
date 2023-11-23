@@ -1,0 +1,8 @@
+<campo chave="nome" alinhar="centro" fonte_tamanho="20"/>
+<rotulo quebra="nao" fonte_tamanho="18" texto=""/>
+<campo chave="preco_unit" alinhar="centro" formato="valor" fonte_tamanho="30"/>
+<rotulo fonte_tamanho="5" texto=""/>
+<campo chave="codigo_barra" alinhar="centro" fonte_tamanho="20"/>
+<logo largura="2.0" inicio="4.8" altura="0.8" nome="AMPM"/>
+<rotulo quebra="nao" fonte_tamanho="12" texto=""/>
+<campo chave="empresa" alinhar="centro" fonte_tamanho="20"/>

@@ -1,0 +1,16 @@
+Para pegar o IP externo
+psql -h gestaosoft.com -p 5432 -d matriz_teste -U postgres
+
+Caso não retorne o IP externo:
+gestaosoft.com
+
+vi /etc/resolv.conf
+
+Se no vi eles estiver sem o conteúdo: "nameserver 8.8.8.8"
+
+apt-get purge resolvconf*
+
+rm /etc/resolv.conf
+
+vi /etc/resolv.conf
+Coloca agora o conteúdo: "nameserver 8.8.8.8"

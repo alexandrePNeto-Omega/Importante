@@ -1,0 +1,21 @@
+Quando da trackback
+wget ftp://integracao:0m3g4l1nx@gestaosoft.com/files/as_install_3.3.1.98.sh.gz
+
+Quando terminar de baixar 
+
+apt-get install unzip
+
+Descompacta o arquivo:
+unzip as_install_3.3.1.98.sh.gz ou
+gunzip x as_install_3.3.1.98.sh.gz
+
+Dar permissao de executavel para o arquivo:
+chmod +x as_install_3.3.1.98.sh
+
+Executa o instalador:
+./as_install_3.3.1.98.sh
+
+
+chmod 777 /usr/local/bin/*
+
+e agora rodar a sincronia

@@ -1,0 +1,42 @@
+Sempre na matriz
+
+Para ver os motivos genéricos:
+	Financeiro > Relatórios > Transações TEF
+		- Selecione a empresa e 
+		- Pegue tudo do 1º dia até a data atual
+		- Forma de pagamento = MOTIVO GENÉRICO
+	
+Rotina para arrumar os vinculos:
+	Configurações > Módulos > TEF > Vinculo de formas de pagamento
+		- Coloca a empresa
+			* Se precisa adicionar um novo: Clicar em NOVO, colocar as informações que precisa (não precisa preencher o motivo de saque)
+			* Para ajustar: 
+			
+Rotina para o relatório de ajuste:
+	Relatórios > Ajusta motivo genérico
+		
+
+select * from tef_transacao where ts_transacao = 'AA/mm/d hh:mm:ss';
+
+select * from tef_transacao where ts_transacao = '2023/07/09 11:48:46';
+
+
+BEGIN;
+UPDATE tef_transacao SET operadora_nome = '' WHERE operadora = '' AND operadora_nome is null;
+
+COMMIT;
+
+Ticket Log
+
+para o update chamar o gui  ou o felype
+
+QUANDO É DTEF FAZ PELO OP BANDEIRA.
+		
+TELENET = PERSONAL CARD
+CREDITO = SENFF
+VISA ELECTRON = DEBITO
+MAESTRO = DEBITO
+
+NUNCA VINCULAR COMO POS
+
+QUANDO É SITEF NÃO TEM OPERADORA BANDEIRA E O AJUSTE É PELA BANDEIRA

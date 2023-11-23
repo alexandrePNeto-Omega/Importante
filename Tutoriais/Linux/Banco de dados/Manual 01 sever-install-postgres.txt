@@ -1,0 +1,69 @@
+loga
+
+"sudo su"
+
+lsb-release -a
+
+"sudo nano /etc/apt/sources.list"
+
+Adicione no final do documento as seguites linhas:
+    > deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+    > deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main (usado para baixar a versão 13)
+    > deb http://security.ubuntu.com/ubunto focal-security
+    > deb http://security.ubuntu.com/ubuntu bionic-security main
+
+Depois atualizar com "sudo apt-get update"
+
+Instalar o PostgreSQL 9.6: Instalar o PostgreSQL 9.6 através do apt-get:
+sudo apt-get install postgresql-13 libpq-dev
+
+No final da instalação, o banco de dados irá executar o serviço automaticamente. Pode ser
+confirmado se o PostgreSQL está executando com o comando:
+sudo service postgresql status
+
+Caso o resultado for similar a este: /9.6/main (port 5432): online, o serviço do banco
+está executando perfeitamente.
+
+Caso nao estiver online executar:
+sudo service postgresql restart
+
+Após isso, crie um arquivo com o comando "sudo nano /etc/apt/preferences.d/postgres.pref
+", dentro dele coloque =
+    "Package: postgresql
+    Pin: version 13*
+    Pin-Priority: 1001"
+
+Edita o arquivo:
+vi /etc/postgresql/13/main/postgresql.conf
+
+Altera as linhas:
+#bytea_output = 'hex' # hex, escape
+#default_transaction_isolation = 'read committed'
+#standard_conforming_strings = on
+shared_buffers = 128MB
+ssl = on
+#listen_addresses = 'localhost'
+port = 5432
+max_connections = 100
+
+Para:
+bytea_output = 'escape' 
+default_transaction_isolation = 'read committed' 
+standard_conforming_strings = off
+shared_buffers = 1000MB (se tiver pelo menos 8GB de ram pode colocar 2000 nessa linha) 
+ssl = off 
+listen_addresses = '*' 
+port = 5687 
+max_connections = 500 
+
+(Obs, não esqueça de remover o #)
+
+service postgresql restart
+
+Por final para executar o postgresql automaticamente ao reiniciar a maquina:
+cd /etc/init.d
+sudo update-rc.d postgresql enable
+ou 
+sudo systemctl enable postgresql
+
+Acabou.

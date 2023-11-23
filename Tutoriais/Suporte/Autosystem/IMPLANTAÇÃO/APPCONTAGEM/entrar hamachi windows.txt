@@ -1,0 +1,4 @@
+Entrar no hamachi com o gestão soft
+
+hamachi do-join rede
+autosystem_linx

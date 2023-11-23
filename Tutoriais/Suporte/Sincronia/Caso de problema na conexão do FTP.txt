@@ -1,0 +1,8 @@
+Caso de problema na conexão do FTP
+
+> Atualizar o hamachi (na filial e matriz)
+	- Google: logmein hamachi download -> VPM.NET -> donwload para linux -> logmein-hamachi_2.1.0.203-1_amd64.deb
+
+	- No servidor: 
+		> wget https://vpn.net/installers/logmein-hamachi_2.1.0.203-1_amd64.deb
+		>  dpkg -i logmein-hamachi_2.1.0.203-1_amd64.deb
