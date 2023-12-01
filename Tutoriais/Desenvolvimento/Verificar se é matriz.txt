@@ -1,0 +1,5 @@
+select * from pgd_lsite;
+
+0 = Matriz
+
+1 = Filial
