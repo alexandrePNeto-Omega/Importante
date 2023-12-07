@@ -1,0 +1,6 @@
+git config --local user.name "Alexandre Philippus Neto"
+git config --local user.email alexandre.philippus@franqueadolinx.com.br
+
+
+git config --local user.name "alexandrePNeto-Omega"
+git config --local user.email suporte9@omegaautomacao.com

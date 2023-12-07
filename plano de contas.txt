@@ -1,0 +1,9 @@
+plano de contas é como suas contas tão se movimentando
+
+
+ativo = que se movimenta
+passivo = caiu morreu
+
+1 e 2 = vai movimentar ainda
+
+3 e 4 = conta de resultado, que não movimenta, morreu
